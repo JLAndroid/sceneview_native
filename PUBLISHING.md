@@ -14,7 +14,7 @@
 ## 构建和发布流程
 
 1. `gradle.properties` 统一保存 `GROUP`、`VERSION_NAME`。两个模块的 Maven 发布配置、示例和库的 BuildConfig 读取同一版本。
-2. 推送代码并创建同名 Git 标签，例如 `4.35.0`。已发布的标签不能用于覆盖不同产物；后续改动发布新版本。
+2. 推送代码并创建同名的附注 Git 标签，例如 `4.35.0`。推送时带上 `--follow-tags`，或在本仓库设置 `git config push.followTags true`，确保 GitHub Desktop 推送提交时也带上标签。已发布的标签不能用于覆盖不同产物；后续改动发布新版本。
 3. 在 [JitPack](https://jitpack.io/#JLAndroid/sceneview_native) 查询此仓库并构建该标签。首次下载 Maven 文件也会触发云端构建。
 4. `jitpack.yml` 指定 JDK 17，并把两个 release publication 安装到 JitPack 构建机器的 Maven Local。`$VERSION` 为请求的标签或提交版本，传给 `VERSION_NAME`，确保两个模块的传递依赖版本一致。
 5. 云构建成功后，检查两个模块的 `.pom`、`.module`、`.aar` 是否可下载，并确认 native 的 core 依赖使用上述 groupId 和同一版本。
