@@ -1,0 +1,110 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "local.sceneview",
+    "module": "sceneview-core",
+    "version": "4.35.0-native.3-kotlin1.9",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "dev.romainguy",
+          "module": "kotlin-math",
+          "version": {
+            "requires": "1.5.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "sceneview-core-4.35.0-native.3-kotlin1.9.aar",
+          "url": "sceneview-core-4.35.0-native.3-kotlin1.9.aar",
+          "size": 510802,
+          "sha512": "5e10b1460eb3fa99894067a97facc4ea21af45320763cca358f07fab34b0e3de912dd93d09de7bed0cf77cfebe6ec7f4f71c7bd20482fff97507c4f4d116779d",
+          "sha256": "52f5e603cc513deb90e1d1a219bcfc42a643bd4e852b8becec9f75fb7bc79c76",
+          "sha1": "e5f00bbcd72f5289d3d950a11ae6616f2c7d65b7",
+          "md5": "7420b80144571be77c59cb4e7be83114"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "dev.romainguy",
+          "module": "kotlin-math",
+          "version": {
+            "requires": "1.5.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "sceneview-core-4.35.0-native.3-kotlin1.9.aar",
+          "url": "sceneview-core-4.35.0-native.3-kotlin1.9.aar",
+          "size": 510802,
+          "sha512": "5e10b1460eb3fa99894067a97facc4ea21af45320763cca358f07fab34b0e3de912dd93d09de7bed0cf77cfebe6ec7f4f71c7bd20482fff97507c4f4d116779d",
+          "sha256": "52f5e603cc513deb90e1d1a219bcfc42a643bd4e852b8becec9f75fb7bc79c76",
+          "sha1": "e5f00bbcd72f5289d3d950a11ae6616f2c7d65b7",
+          "md5": "7420b80144571be77c59cb4e7be83114"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "sceneview-core-4.35.0-native.3-kotlin1.9-sources.jar",
+          "url": "sceneview-core-4.35.0-native.3-kotlin1.9-sources.jar",
+          "size": 178005,
+          "sha512": "72508669e93bcbce1a834f70c59ce9d84d7fe72e6a76592c3a6fcec0c6433854705b6c78c09c9e0c56d5cf9ffa8113ebd3aa6a1879e6e0899557a2ebaeb51eee",
+          "sha256": "c0abbb77d9a277370eb14418b05e3f918258430ac9a65f51db1c302d4d1895f3",
+          "sha1": "c631b25e562893500fda3f19c2c527bfaf8734d1",
+          "md5": "bc600caba9f248801cd97248233e251c"
+        }
+      ]
+    }
+  ]
+}

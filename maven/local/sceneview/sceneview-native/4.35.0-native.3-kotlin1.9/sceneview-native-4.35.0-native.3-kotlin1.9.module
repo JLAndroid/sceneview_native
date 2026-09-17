@@ -1,0 +1,235 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "local.sceneview",
+    "module": "sceneview-native",
+    "version": "4.35.0-native.3-kotlin1.9",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "local.sceneview",
+          "module": "sceneview-core",
+          "version": {
+            "requires": "4.35.0-native.3-kotlin1.9"
+          }
+        },
+        {
+          "group": "com.google.android.filament",
+          "module": "filament-android",
+          "version": {
+            "strictly": "1.72.1",
+            "requires": "1.72.1"
+          }
+        },
+        {
+          "group": "com.google.android.filament",
+          "module": "gltfio-android",
+          "version": {
+            "strictly": "1.72.1",
+            "requires": "1.72.1"
+          }
+        },
+        {
+          "group": "com.google.android.filament",
+          "module": "filament-utils-android",
+          "version": {
+            "strictly": "1.72.1",
+            "requires": "1.72.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-runtime-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "sceneview-native-4.35.0-native.3-kotlin1.9.aar",
+          "url": "sceneview-native-4.35.0-native.3-kotlin1.9.aar",
+          "size": 3829589,
+          "sha512": "490e962d600d5e1c2c60fb7648bba991581742986107f6556bff8ca52d0ccbce7e4d7096f0ca3b67cea9d9023619e26d91721dfbc72980ab1c9e5938229de882",
+          "sha256": "3a70b544e1920bafa8e05f50008e1406d1d2e23d673c47865c70ce01ce20b6d9",
+          "sha1": "a6fbfd1c43da55433c3cdb6b4804cb7b5705f90f",
+          "md5": "0f959590f3fbbefa85db9ad396a8e505"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.8.2"
+          }
+        },
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "androidx.activity",
+          "module": "activity-ktx",
+          "version": {
+            "requires": "1.8.2"
+          }
+        },
+        {
+          "group": "androidx.savedstate",
+          "module": "savedstate-ktx",
+          "version": {
+            "requires": "1.2.1"
+          }
+        },
+        {
+          "group": "com.github.kittinunf.fuel",
+          "module": "fuel",
+          "version": {
+            "requires": "2.3.1"
+          }
+        },
+        {
+          "group": "com.github.kittinunf.fuel",
+          "module": "fuel-android",
+          "version": {
+            "requires": "2.3.1"
+          }
+        },
+        {
+          "group": "com.github.kittinunf.fuel",
+          "module": "fuel-coroutines",
+          "version": {
+            "requires": "2.3.1"
+          }
+        },
+        {
+          "group": "local.sceneview",
+          "module": "sceneview-core",
+          "version": {
+            "requires": "4.35.0-native.3-kotlin1.9"
+          }
+        },
+        {
+          "group": "com.google.android.filament",
+          "module": "filament-android",
+          "version": {
+            "strictly": "1.72.1",
+            "requires": "1.72.1"
+          }
+        },
+        {
+          "group": "com.google.android.filament",
+          "module": "gltfio-android",
+          "version": {
+            "strictly": "1.72.1",
+            "requires": "1.72.1"
+          }
+        },
+        {
+          "group": "com.google.android.filament",
+          "module": "filament-utils-android",
+          "version": {
+            "strictly": "1.72.1",
+            "requires": "1.72.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "androidx.lifecycle",
+          "module": "lifecycle-runtime-ktx",
+          "version": {
+            "requires": "2.7.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "sceneview-native-4.35.0-native.3-kotlin1.9.aar",
+          "url": "sceneview-native-4.35.0-native.3-kotlin1.9.aar",
+          "size": 3829589,
+          "sha512": "490e962d600d5e1c2c60fb7648bba991581742986107f6556bff8ca52d0ccbce7e4d7096f0ca3b67cea9d9023619e26d91721dfbc72980ab1c9e5938229de882",
+          "sha256": "3a70b544e1920bafa8e05f50008e1406d1d2e23d673c47865c70ce01ce20b6d9",
+          "sha1": "a6fbfd1c43da55433c3cdb6b4804cb7b5705f90f",
+          "md5": "0f959590f3fbbefa85db9ad396a8e505"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "sceneview-native-4.35.0-native.3-kotlin1.9-sources.jar",
+          "url": "sceneview-native-4.35.0-native.3-kotlin1.9-sources.jar",
+          "size": 320523,
+          "sha512": "d88d1a4b37432e8a11737cf2a1eab0a3febb9b2e5f583881d56837769fc1c70357121328815c90206e8cec2062b203ecf7679b9c7404c5e3d0203334b3b30ab7",
+          "sha256": "3c0ab93a50e800510f6dc1d18d2cc0b2d451560c4dcf2990a12bef89aa1b354e",
+          "sha1": "cc72592570525b915bede4915d613a284245423e",
+          "md5": "f57fc9218e644092f4f6c2b4d4a4960f"
+        }
+      ]
+    }
+  ]
+}

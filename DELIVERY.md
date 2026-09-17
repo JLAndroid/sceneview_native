@@ -1,5 +1,7 @@
 # Kotlin 1.9.0 兼容版 AAR 接入
 
+**推荐通过网络 Maven 接入**，只需配置公开仓库地址并声明 `local.sceneview:sceneview-native:4.35.0-native.3-kotlin1.9`，详见 [README.md 的网络 Maven 接入说明](README.md#通过网络-maven-接入)。两个模块和第三方依赖会自动解析，无需手动复制 AAR。以下内容保留给需要离线分发或手动 AAR 接入的使用者；两种方式不要同时使用。
+
 本说明适用于已生成的本地 AAR 交付包。`dist/` 和 `compatibility-check/app/libs/*.aar` 不纳入 Git，全新克隆仓库时这些文件不存在。源码使用者可以直接打开根工程，默认 `sample` 依赖源码模块。
 
 独立的 `compatibility-check/` 工程用于验证手动 AAR 接入。准备好下列两个当前版本 AAR 后，将它们放入 `compatibility-check/app/libs/`，并为该工程配置自己的 Android SDK。`tools/package_delivery.py` 依赖此前构建产生的日志、测试报告和依赖报告；清理构建产物后，需要重新完成相应构建流程才能运行它。
