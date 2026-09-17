@@ -1,0 +1,28 @@
+// Alternative to the supplied Maven repository. Merge into app/build.gradle (Groovy).
+dependencies {
+    implementation files('libs/sceneview-native-4.35.0-native.3-kotlin1.9.aar')
+    implementation files('libs/sceneview-core-4.35.0-native.3-kotlin1.9.aar')
+// Filament utilities require this runtime; the Kotlin compiler plugin remains 1.9.0.
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.0.21'
+    implementation 'dev.romainguy:kotlin-math:1.5.3'
+    implementation 'com.google.android.filament:filament-android:1.72.1'
+    implementation 'com.google.android.filament:gltfio-android:1.72.1'
+    implementation 'com.google.android.filament:filament-utils-android:1.72.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+    implementation 'androidx.annotation:annotation:1.9.0'
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.activity:activity-ktx:1.8.2'
+    implementation 'androidx.savedstate:savedstate-ktx:1.2.1'
+    implementation 'com.github.kittinunf.fuel:fuel:2.3.1'
+    implementation 'com.github.kittinunf.fuel:fuel-android:2.3.1'
+    implementation 'com.github.kittinunf.fuel:fuel-coroutines:2.3.1'
+}
+configurations.configureEach {
+    resolutionStrategy.eachDependency { details ->
+        if (details.requested.group == 'com.google.android.filament') {
+            details.useVersion '1.72.1'
+            details.because 'This version must match the bundled filamat material binaries'
+        }
+    }
+}

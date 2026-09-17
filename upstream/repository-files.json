@@ -1,0 +1,57 @@
+[
+  {
+    "file": "upstream/4.35.0/repository/gradle/libs.versions.toml",
+    "sha256": "dcd2de6303a0b9d171123de04878cd50e12fae7fccddd0aa72584f4c658bc944",
+    "url": "https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.35.0/gradle/libs.versions.toml"
+  },
+  {
+    "file": "upstream/4.35.0/repository/gradle/wrapper/gradle-wrapper.properties",
+    "sha256": "d01b41913834fb3cb14e71f69a08898e6a47e663b08f5c9b8c7e0772c38889d2",
+    "url": "https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.35.0/gradle/wrapper/gradle-wrapper.properties"
+  },
+  {
+    "file": "upstream/4.35.0/repository/gradle-9.7.1-bin.zip.sha256",
+    "sha256": "e421f98689f75d99cbb9ea26d133a25786bb5e1ab6d346e936cacfaa6990c58f",
+    "url": "https://services.gradle.org/distributions/gradle-9.7.1-bin.zip.sha256"
+  },
+  {
+    "file": "upstream/4.35.0/repository/gradle.properties",
+    "sha256": "b8a6d3009ddf7dc6a64f20608684bfe396e9e16c5cb471ecb173719deccb0aad",
+    "url": "https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.35.0/gradle.properties"
+  },
+  {
+    "file": "upstream/4.35.0/repository/gradlew",
+    "sha256": "a5a5c199ba02189ae8c46a334223371a20599d9c298ef65e7540ede4a3f72d59",
+    "url": "https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.35.0/gradlew"
+  },
+  {
+    "file": "upstream/4.35.0/repository/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "url": "https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.35.0/LICENSE"
+  },
+  {
+    "file": "upstream/4.35.0/repository/NOTICE",
+    "sha256": "db9322b951da979a20071f4504fbd2be99d49262a3ba089357af981fd59c4c53",
+    "url": "https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.35.0/NOTICE"
+  },
+  {
+    "file": "upstream/4.35.0/repository/sceneview/build.gradle",
+    "sha256": "fbc6f14a6559c6ba66c13a2d2a1e4dd60129572257c7596d4f1d34111e5acd63",
+    "url": "https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.35.0/sceneview/build.gradle"
+  },
+  {
+    "file": "gradlew",
+    "sha256": "c15a47b60a4eeede9ffee33433fd990d8b6236607372b9bb1f6dc51b07b78c39",
+    "origin": "Local copy of standard Gradle wrapper bootstrap from existing workspace; not executed"
+  },
+  {
+    "file": "gradlew.bat",
+    "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b",
+    "origin": "Local copy of standard Gradle wrapper bootstrap from existing workspace; not executed"
+  },
+  {
+    "file": "gradle/wrapper/gradle-wrapper.jar",
+    "sha256": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637",
+    "origin": "Local copy of standard Gradle wrapper bootstrap from existing workspace; not executed"
+  }
+]

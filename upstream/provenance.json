@@ -1,0 +1,17 @@
+[
+  {
+    "file": "upstream/4.35.0/sceneview-4.35.0-sources.jar",
+    "sha256": "bef77f51551a1c6911c8b3f9be3f6dc90dabab830745d9a5214f4d165b9a09a0",
+    "url": "https://repo.maven.apache.org/maven2/io/github/sceneview/sceneview/4.35.0/sceneview-4.35.0-sources.jar"
+  },
+  {
+    "file": "upstream/4.35.0/sceneview-core-android-sources.jar",
+    "sha256": "a7531068f7677103896501f7acc6417908034bec729e408281f3e05d3eb30eae",
+    "url": "https://repo.maven.apache.org/maven2/io/github/sceneview/sceneview-core-android/4.35.0/sceneview-core-android-4.35.0-sources.jar"
+  },
+  {
+    "file": "upstream/4.35.0/sceneview-4.35.0.aar",
+    "sha256": "337bc24382c29707a6f1d29e5afae394fd4847af554cc31e803eeefaada6ad43",
+    "url": "https://repo.maven.apache.org/maven2/io/github/sceneview/sceneview/4.35.0/sceneview-4.35.0.aar"
+  }
+]

@@ -1,0 +1,43 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#E8F1FA">
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="center" android:gravity="center" android:textSize="22sp"
+        android:textColor="#526A82" android:text="这是模型后面的普通 TextView" />
+
+    <io.github.sceneview.TextureSceneView
+        android:id="@+id/scene" android:layout_width="match_parent"
+        android:layout_height="match_parent" app:svSurfaceType="texture"
+        app:svOpaque="false" app:svAutoCenter="true" app:svAutoFit="false" />
+
+    <LinearLayout android:id="@+id/controls"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="bottom" android:orientation="vertical"
+        android:padding="20dp" android:background="#EFFFFFFF">
+        <TextView android:id="@+id/status" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textColor="#15283C"
+            android:text="正在加载本地 GLB…" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="单指环绕相机，双指缩放；按钮始终在模型上方" />
+        <Button android:id="@+id/animation" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:enabled="false" android:text="停止 Spin 动画" />
+        <Button android:id="@+id/texture" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:enabled="false" android:text="切换模型纹理" />
+        <Button android:id="@+id/openOverlay" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="打开覆盖层（模型保持渲染）" />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/overlay" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:orientation="vertical"
+        android:gravity="center" android:padding="28dp" android:background="#FF20334B"
+        android:clickable="true" android:focusable="true" android:visibility="gone">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:gravity="center" android:textSize="22sp" android:textColor="#FFFFFF"
+            android:text="这是普通 Android View\n\n模型没有被隐藏或移除；覆盖层按 View 层级挡住它。" />
+        <Button android:id="@+id/closeOverlay" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="24dp"
+            android:text="关闭覆盖层" />
+    </LinearLayout>
+</FrameLayout>

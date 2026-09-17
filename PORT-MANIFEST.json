@@ -1,0 +1,1624 @@
+{
+  "upstream_version": "4.35.0",
+  "port_version": "4.35.0-native.3-kotlin1.9",
+  "date": "2026-09-17",
+  "scope": "Android 3D + Android/core sources; not a full multi-platform repository clone",
+  "counts": {
+    "unchanged": 172,
+    "modified": 45,
+    "new": 5,
+    "omitted_frontend": 8
+  },
+  "files": [
+    {
+      "file": "sample/src/main/java/local/sceneview/sample/MainActivity.kt",
+      "status": "new",
+      "upstream": null,
+      "sha256": "64f3e8a6af772f2702943756499b05b1160f379591165648634d0637fc6b7264",
+      "upstream_sha256": null
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/animation/AnimationPlayback.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/animation/AnimationPlayback.kt",
+      "sha256": "ce8d03ec38a1c8433d469d22ba20cadf11b89fd905606413df84b2bc2e63364a",
+      "upstream_sha256": "20ce98d3e81d0d71e1aad4fa30ef1b5dd64740015b327a70215f2ff4b484557e"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/animation/AnimationSequence.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/animation/AnimationSequence.kt",
+      "sha256": "ba54ed6852a0fd502cd3b206b03cb846b44dc0d51eff8e8ceb6ae02e789f3802",
+      "upstream_sha256": "9f518cd407ed0c7d9ce5479bef1b74f7387d4a912011a6ec35ea8a6b9e8dc8d7"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/animation/AnimationTimeUtils.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/animation/AnimationTimeUtils.kt",
+      "sha256": "5e973c1e0b377b6a1a6e2fa3605cef5f586503db66140e29089ce8dda564cc86",
+      "upstream_sha256": "0da65b26a9d64eb0a9897a3fa4bea7c01ea12b19327eb890b6112de7d995c5d6"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/animation/Interpolation.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/animation/Interpolation.kt",
+      "sha256": "61a29e4bbaf56150309a6bac4c726781ca014988820ba02d9aee064a9d44c58e",
+      "upstream_sha256": "a78a478fcfcc2fefe0c8ae805439de0aa84926d1b6e01f7a551f35caefae49b1"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/animation/KeyframeAnimation.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/animation/KeyframeAnimation.kt",
+      "sha256": "5371524028f11dc39361a6096e5c21a0d087f1d0c99e10be9e38e58d83fb06e3",
+      "upstream_sha256": "2cdd2ac6faf83e5cc899ff2956a0ed19f78a7f337426aadd54936632533c98f5"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/animation/PropertyAnimation.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/animation/PropertyAnimation.kt",
+      "sha256": "bb7f96c9d0d3ce1719c38bbbf674796ba56c09d03f2142ec94488e20274b918c",
+      "upstream_sha256": "91c38892384f8ed22320c440109a4f9cf665e10e8defed1390c57f68edbf6be8"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/animation/SmoothTransform.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/animation/SmoothTransform.kt",
+      "sha256": "2e75a14fc50bd4650ac505d888368d5c3b7cbdbf43ffec2c05e356ce5d57ae21",
+      "upstream_sha256": "6a2cfee56cb6b8c1954e9b3f605b89f39ba5a0919e81a12c28227175885fe6b7"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/animation/SpringAnimation.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/animation/SpringAnimation.kt",
+      "sha256": "89b4c8f4bfbcdc43e72bc4b875a920161e7cf8ac79853f2fa4b8fd5cea576093",
+      "upstream_sha256": "78a0b286ef47f508d107c64ee46e3be6114666244aa46e1f8b4cbbb718b0d022"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/Box.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/Box.kt",
+      "sha256": "390afc9446df482594f1337f6700a63bbf0761ea6da59ea85f48a4a13b5916b3",
+      "upstream_sha256": "c678cf6093cc43f5b93ba34c237ea3abdfa12eb45bf14eb4515aa653bf5eb321"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/Capsule.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/Capsule.kt",
+      "sha256": "a86eb5ee523e4b3b2cb4d44f7faa40fce0024c799c79c8be4b3e47303ae74a6f",
+      "upstream_sha256": "04ae2e9833af78618a5e2518ccf5d01f3f2396cb5aa152fd667e523439419ffb"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/ChangeId.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/ChangeId.kt",
+      "sha256": "89265c80c8e6506fd88ef7d809c2cbc91e45dcc1d9f67cb829eed81900228226",
+      "upstream_sha256": "e8c5c2a098294b777ff4166bf788a5cb6fdbae5c17b2e4960abdea201c11bce3"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/CollisionResponse.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/CollisionResponse.kt",
+      "sha256": "fc33640f68cf6fd3b8c1eba9ccdbe2959e76a6d5f3464e4512083689ae222ae4",
+      "upstream_sha256": "bddc8158d32f4cea465257b9b1448c6b626ae55adcdb1799dc6f8acf95baf334"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/CollisionShape.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/CollisionShape.kt",
+      "sha256": "7101cf8b84d12ae5fd363fdb276ebf09895a0567d0aa7c3b2bbf99b11cfafb4b",
+      "upstream_sha256": "ee53f8119bc653982166d10afea3cc01d769a0bc431660ca38127181d6b02d2b"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/Intersections.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/Intersections.kt",
+      "sha256": "1cb53fa3628d3e4b643dd47c3ed819c53382c996851aa1e78f2ac2092eaf3410",
+      "upstream_sha256": "0277ac7804ee39bb0d9de9f510127a7744aa6ace6cbe9a3ae8cd1cca26825545"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/MathHelper.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/MathHelper.kt",
+      "sha256": "c924f147c495b43294a586b57753408373088e2f2bb7949a79b99751f9cb9d3c",
+      "upstream_sha256": "f93bcf33e8d1e68aa6dc7a6117f6e268a6f96a54573269936df73e3d07f7f272"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/Matrix.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/Matrix.kt",
+      "sha256": "4c43142d871c44ba3eed5115a78c2ae982c11bad505dcf2ee32f7161e8122fcd",
+      "upstream_sha256": "e231ca70f2cca9986a3c71da0eb715da6532a20f1e26991fa689aca8312b4465"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/MeshCollider.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/MeshCollider.kt",
+      "sha256": "9b8f96dc831868fa61b2518a0513b1541dbfe6e0b034607c1f637ce80a8266a2",
+      "upstream_sha256": "0e163ec1848e2ec2eec09795a03daad974b67d07f5844f45688dd308a9f00c5e"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/Octree.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/Octree.kt",
+      "sha256": "e6e94a3d286312dbaa510d28d0ece6f2f126ee36713a493a92eb4f49f2e0884c",
+      "upstream_sha256": "1565e0e281a5646001ab75b456fdf7e146d3c1ce5a0d9398d29a4f1959e9c1e8"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/Plane.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/Plane.kt",
+      "sha256": "5d4db42159e1676d51e294a8aee8ba0efbb0460bc477ff0fa99497bd731fc74f",
+      "upstream_sha256": "1ac7b3b22eb17fd50c0306083ab392253cf977301800889053c439ec8e7f7f0f"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/Preconditions.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/Preconditions.kt",
+      "sha256": "bbb3424224acd91f59e8201ea1babbe79e030b0855070c40c789cc35ed0b5a6f",
+      "upstream_sha256": "878dc24859cab82af889634ce5efd696824a5930c9d4b48558b49b0cd1cedeff"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/Quaternion.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/Quaternion.kt",
+      "sha256": "466d37a2c77daa007fc0975e0b745d02cc23fe6af3a6fcb3f420dc255fa7e9d1",
+      "upstream_sha256": "b906fc700af3828885ba6091b0ff30eaa6d78a8165c3f80d91b9b47c25ae13cd"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/Ray.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/Ray.kt",
+      "sha256": "9e786ea22d6c6209818660d0a8a481511b962585b66fa1fb1b73eb76373e7ece",
+      "upstream_sha256": "97b531c3f4d80ddb27504453ee990cd6d6fd6083ebfbafb97dbe7ca98158a1b9"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/RayHit.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/RayHit.kt",
+      "sha256": "40f036530aba789c4866df29f3b95a50108eaa38c4dc30c6c0b3b175945c28cf",
+      "upstream_sha256": "5c74efa08664180c64961884fe06ca3ecc1a72dcd62c15da48047b86598fd9f8"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/Sphere.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/Sphere.kt",
+      "sha256": "c3dea9cfb84e9a42592ba8e927b2a35814634068716a9dbeb39a3dbee7495873",
+      "upstream_sha256": "a75a192bfa244545e4d01d56511fe4db70804206bf3f71350a465944965f6d5c"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/TransformProvider.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/TransformProvider.kt",
+      "sha256": "a236233cf7c37910ba6775b251fcb73772742bb17ee221f319ff1e443d559b79",
+      "upstream_sha256": "6bcfc74e0553aa841df325ef8b287addb9c31c2a5c5c206bde1ded9da4f98330"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/collision/Vector3.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/collision/Vector3.kt",
+      "sha256": "8f36c52ff3118fda676fc3aa3961a4fd0ba54fdcfb3dfa27062282d75e7da493",
+      "upstream_sha256": "0bf90d64755f6cdc87767bf6799cc5eef1517789d3e46990504616d60c5edd83"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/obj/ObjGlb.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/obj/ObjGlb.kt",
+      "sha256": "81e9f92ac3afaf32b764222db587ab6e2aa47db824ce3275fc771936ffdffee3",
+      "upstream_sha256": "064904c5e465b8434f9c3a32b0b80fb42e4b6c669305b2b3d3bee1f5c8781a09"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/obj/ObjLoader.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/obj/ObjLoader.kt",
+      "sha256": "7a8db6bcc5bedb7e56217d7fedc7cf1c2fb5ac62a7d6f772657bd8eb03cba545",
+      "upstream_sha256": "32f2cd02c6e434cd8a504677fec4f173bb91a811ed621210609110ac9c1576c5"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/obj/ObjModel.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/obj/ObjModel.kt",
+      "sha256": "4cf0f64fb9642da025938d5dae9e2e6a6e13db28243c6f24c29aca400dfd6e99",
+      "upstream_sha256": "5071f0e726b67866cb9602d3b517184d448cfa38c19f2e547576ddd7c51c9638"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/obj/ObjMtl.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/obj/ObjMtl.kt",
+      "sha256": "75aa72d924dd7ef9410fa4d990e2b35a699f9ceaaac0b3f41561fb70338c9a39",
+      "upstream_sha256": "033ce0bc7bd441044291fafc740038ab02a6809f6456a7edf1721e0d91dc6aa0"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/obj/ObjParser.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/obj/ObjParser.kt",
+      "sha256": "20011aafe71ca1dd062e5ca51d6a29d4afa61544a6673df8295ea3f2ea4f7363",
+      "upstream_sha256": "57c588f42958b3dc11ea0a1e6528891aa5ebd511b9b0c4cf02b69fdcfe25cba6"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/obj/ObjText.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/obj/ObjText.kt",
+      "sha256": "00b9439021abb489da85cd1b663ac7017ab7038ab74474f895c95e638b894045",
+      "upstream_sha256": "3bea818c66b8187c972486de2ff527edb9e5ddc91ae9c0cb81825fe6a24a4516"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/obj/ObjTriangulation.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/obj/ObjTriangulation.kt",
+      "sha256": "a9fbc00f8dd8e25e9c9ee9e83245ba1a6f05e074d60bc7b278c3541e595fe03e",
+      "upstream_sha256": "1716a23243c51da3c68f2128aeef2e31d5698a45e56c11ca2176cdc9ce2204db"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/ply/PlyLoader.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/ply/PlyLoader.kt",
+      "sha256": "0200ee2f0f023f670ca264bbb9cd93b6f40f76ca14065d667db133c068c9e54c",
+      "upstream_sha256": "a7a10fa9bee9c508299582ef8dca0bb841a03f5588e6b4db642ea2084fdb8f60"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/ply/PlyModel.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/ply/PlyModel.kt",
+      "sha256": "6b410179ca5f297f834f7d3b20d571519668d5b129ece1dcb2c884339828afa3",
+      "upstream_sha256": "1b8f1c9cc049da91301876b600bf6c60addc44aee4910e4b949935534740bdf7"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/splat/ByteReaders.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/splat/ByteReaders.kt",
+      "sha256": "3b4a5673811217b4994b313cc859d66a6af721aa4b6f2a271e3f4f92d8784575",
+      "upstream_sha256": "48b7de467ac63fc339419bfba5f8f192cf83bba78b703e72cdc046077068fbb8"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/splat/Inflate.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/splat/Inflate.kt",
+      "sha256": "f2218e99515c1e1cb87326de8949e672301552f84b111d3f8209512a17dbbe23",
+      "upstream_sha256": "0a87e226f8f44a80dc34934721f847a3c1a21064febc608aa36f6b5fe3dfa1ca"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/splat/PlyParser.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/splat/PlyParser.kt",
+      "sha256": "8397306204e43cef65b92875e099e1d626b226ce6a5aca948b5d497bb4fb3292",
+      "upstream_sha256": "ac95ed11e6684f3c70d1ad95bd45b38f361d0f34d5a4d255ab546847d0f97ec3"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/splat/SplatCloud.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/splat/SplatCloud.kt",
+      "sha256": "5c21e754d058c8d209bcee352f930a82409726218bcdf06984a2c61f29918ceb",
+      "upstream_sha256": "3cc5a3aff8e3ba57cfc184df9253d7ebe721b5ffab2c4dbb04ea257a66b37628"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/splat/SplatMath.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/splat/SplatMath.kt",
+      "sha256": "cab01a81a7903047c190aa494ea977beda67fd0dfefdc36152790cac348c6230",
+      "upstream_sha256": "3f9e86db9be09040df7feb739cbbf096e92d009283bba6943e4fd32100371ce0"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/splat/SplatParser.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/splat/SplatParser.kt",
+      "sha256": "25fde1c6ba73c35a04129e2ffe7a678edd1d4ff80973d23274f2267211dde49d",
+      "upstream_sha256": "445076b0b2f7c6ec99bb6ca7d952a4ad737bdb26ea097d27ef8276399bbcf1e4"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/splat/SpzParser.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/splat/SpzParser.kt",
+      "sha256": "e52a73b304b5dc04ae5c9dd09615f66871ac8523ee0a97a43488b8c081097874",
+      "upstream_sha256": "5d4e19faee75af43bc9f00341a131abcd6d03ae09fbe5681e203f66d1a3d2640"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/stl/StlLoader.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/stl/StlLoader.kt",
+      "sha256": "f0b242e8d78ccb86e87f15bee9a22e4fe3b5d7959a0ee538fa862212418aac95",
+      "upstream_sha256": "acd0b9442c334037ef03841af98d9b7e064d64fc45726639c434b1bac307118a"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/stl/StlMeshBuilder.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/stl/StlMeshBuilder.kt",
+      "sha256": "6064403e43f5143e46a0e965c621cd476936c5039644e711f22d9306b21a224c",
+      "upstream_sha256": "e9a29c6924826c5ca96206c06032d7235b8810490addcb5e37d5e4a3f9e07ed9"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/stl/StlModel.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/stl/StlModel.kt",
+      "sha256": "c4ae4016be308e7aca14d1d70f0a94e232a9d77682d14e190211638d1e3fcf5c",
+      "upstream_sha256": "e0dc8645b762c7f1494c26e9e60e9a6e7e4451f4dba92344dd679fd064c5c198"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/threemf/ModelUnitGuess.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/threemf/ModelUnitGuess.kt",
+      "sha256": "7f3fc944f192b10ef93e566f93f943c18395b66bb51cebca9813b4ef53daaacf",
+      "upstream_sha256": "071f8acc2c88befc102565384a9e5d21470ea4dda834069401dc3b2a638cd3eb"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/threemf/ThreeMfGlb.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/threemf/ThreeMfGlb.kt",
+      "sha256": "db755592cca850d4f2a870b7df6bc57e6ee33dc7aa86a86c16a7ae1a0b4ac22a",
+      "upstream_sha256": "1935015cd910f19b36168f6ee328a434c30378a9a69bada6fe0d308f0395ab64"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/threemf/ThreeMfLoader.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/threemf/ThreeMfLoader.kt",
+      "sha256": "3dab3755a98ad39cb60fb1e99455ca32c7575ad3dde00bddd817c692ddb92631",
+      "upstream_sha256": "fd5788141530c1bd6794bf4354770be5578e37f4e1de68533288aae97930a53e"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/threemf/ThreeMfModel.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/threemf/ThreeMfModel.kt",
+      "sha256": "c64d34faf0c21e6145cb2bdd6763eba6fe8773eecc79ded8c84de2aae5fd947d",
+      "upstream_sha256": "305d39b51b871155cf43e29547f7ae8320056138132f191f87d1f1cde18ddfe4"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/threemf/ThreeMfParser.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/threemf/ThreeMfParser.kt",
+      "sha256": "7e7ed75881a52012418fbd2278699f7e0aeeeb943b638e59dc1f35e285ea6ff6",
+      "upstream_sha256": "7e7ed75881a52012418fbd2278699f7e0aeeeb943b638e59dc1f35e285ea6ff6"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/threemf/XmlPullParser.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/threemf/XmlPullParser.kt",
+      "sha256": "e6a0fdba4d267ff62a1218bdc62dfd2bb407e35d989f8a5ae69e1e3a0dc67556",
+      "upstream_sha256": "8e569992383f0d66d1e1c1c153073e15b726a55a5017a665417e40b7dd0e64ab"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/core/threemf/Zip.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/core/threemf/Zip.kt",
+      "sha256": "8c7311a2b7e337f154eb36e870e3745e89b3604e2a418d0319c4f2a8052a04df",
+      "upstream_sha256": "bcde2f992882a63dd42ac81f4bd98513e4e1455f55785b5c8fcdbe85c18e1311"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/CapsuleGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/CapsuleGeometry.kt",
+      "sha256": "f8445f545f5a453212974b8b083d30a125d58e87f45a1c1ace5bd0e8d490dc2d",
+      "upstream_sha256": "9b8c9f91af6f1dfe69d310838ba1275933cb829e98588cbfcb81972b47300eb3"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/CSG.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/CSG.kt",
+      "sha256": "3a4ebe5f7ce1e75125fda9c655ee89f34d44bdcbe1c6bd3f1167032a85572570",
+      "upstream_sha256": "6d6d6bb35c0095fbd65de5a5284f942ee6ae34e1a4e22f230d3a60d181578690"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/CubeGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/CubeGeometry.kt",
+      "sha256": "a06fe19fa9861cb316c737b0081b4744e03e8ad3cae985723dc72f6217ed386a",
+      "upstream_sha256": "3b0728accbd9ed6da0a9820d578e719f18cd9e8ba8ddaebbc8ba17f48e46dd61"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/CylinderGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/CylinderGeometry.kt",
+      "sha256": "6e0091588b70d5e0dfad925dc9dfdd6d0f531d4cb52e3360dccf74ab0dd46f41",
+      "upstream_sha256": "952507e41833c28a460660c7727a7c4b2070925bfb940283a6ecbf0d2a1af4d0"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/ExtrudeGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/ExtrudeGeometry.kt",
+      "sha256": "c5fb2662ed839b933fa140dd2ed9390d44b997414e0d31fd79bb9ba641a00d74",
+      "upstream_sha256": "47e120237f02ae4d50f8ab608ea13462461d54848dc16ac483287abb47cbde10"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/GeometryData.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/GeometryData.kt",
+      "sha256": "7c1f405271f100dfc943044c20270f910b640fcf9faace4229b7b98e073684cf",
+      "upstream_sha256": "acd0857e759f065794dce4bef7c93a765449016a78ab595bbf3b223d216daa2f"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/HeightmapGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/HeightmapGeometry.kt",
+      "sha256": "c8d02c2a4fd2e31dd9932270e553de901e4e230572368d3a5b2f1af488280908",
+      "upstream_sha256": "e14c9ea7022e58dbbddf1fca107ebcfbe261bb05a4cbf6edb0037636496d8bce"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/IcosphereGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/IcosphereGeometry.kt",
+      "sha256": "3b56c8612370748af94923a9ab3cda04e28af9c0eec93a0ef974a1d6fad556c6",
+      "upstream_sha256": "ed69f71ebcbc4125944617d778d9cd7b9a989c54feda3e95442b673cc2f7f4a0"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/LatheGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/LatheGeometry.kt",
+      "sha256": "a86dff445502bff7dc3de4a45882d201176df683f2f5f986c128aced2820a653",
+      "upstream_sha256": "3ce8b57b579ffd76ebb9860b189877e4afff676b5233b1b7e4a208d4228af9c3"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/LineGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/LineGeometry.kt",
+      "sha256": "835a97b0b4c061fd220416b8500aa8346ec31411bc4745811b2c52fb3ed5120f",
+      "upstream_sha256": "933806c723a7f91b86c25c9cb543c8a20ce62b47b5a4e59b03a23120a9c1583c"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/PathGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/PathGeometry.kt",
+      "sha256": "cbd20b6bdeb052a56b023401a23766999cce8bc9bc4f5c940aa372522c7ab52c",
+      "upstream_sha256": "4bc749515922586f75438de7e320353de3fde1fd33a123a71eeda4bd7d033476"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/PlaneGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/PlaneGeometry.kt",
+      "sha256": "d924b2d3e64867f05885841613415263ceb01210b1cd3452011085a5c2b780ad",
+      "upstream_sha256": "3d93d2a1a539b9bdb86f5ed666feb658f92db43c6e5e7810e0dfe36004e0e19b"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/RoundedCubeGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/RoundedCubeGeometry.kt",
+      "sha256": "37a2652e2b118333b9b6c074f34ebc1f83e71e4cfac9a2c14a09d0a76bcdf8b6",
+      "upstream_sha256": "4dcd8136894e4d69724e4863f90645e5198cfbcc59ab75da814fe550cee3475e"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/ShapeGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/ShapeGeometry.kt",
+      "sha256": "c9bfeb3a963ae57f36516fce0cd612bb37d16275a7fa61ddbaeda2e415669d27",
+      "upstream_sha256": "c9fbb13d863c2ec0367cbd629d1a3a55faf064ef3f367dec933e0c773dd25cf1"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/SphereGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/SphereGeometry.kt",
+      "sha256": "92346524bc7996336f283072230875e2dc86e7b1dfd1a8e0f651d3c8fa1b1776",
+      "upstream_sha256": "2b42e42bd9e016e78c9644b6f22c700027d637da1af26214942ef39159e7ba24"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/geometries/TorusGeometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/geometries/TorusGeometry.kt",
+      "sha256": "4fdcc269e31e63a9b6f1cbf4468e66eab77e4e951f7cb0cfd443ce374962b9ee",
+      "upstream_sha256": "91dfa265e8fadcccaab344896085bbd5e7a66244c7d256453d9b279906ce0d82"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/gesture/GestureListener.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/gesture/GestureListener.kt",
+      "sha256": "1fee12b1465eb679c7126e4202afd31a0eae498f59fbad3a9bf429de56063ca2",
+      "upstream_sha256": "a9f0e8636c420bfa30ece93cfc20189961155f17b131e26ecf1109c7426659ff"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/gesture/GestureTransforms.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/gesture/GestureTransforms.kt",
+      "sha256": "c81656643803997da6d5e055c1932d8ef58e4d15cd8f59665ff9671b805d291a",
+      "upstream_sha256": "82747618926b85382765cc611af53ec5ceff6411940613e91eba21acd78de7ef"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/logging/Log.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview-core-android/androidMain/io/github/sceneview/logging/Log.kt",
+      "sha256": "6825f430870f3b180647c9dbc2de5ee8159e3d62fe57ef073178fcc143083bbb",
+      "upstream_sha256": "0a67180e2853ce40c39d74e3bc69aba608dd07d610c5671a9af043b16ea233f0"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/math/CameraProjection.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/math/CameraProjection.kt",
+      "sha256": "b8f3a132617cd6473ef8b4986f3253e518e909741f4df2c5729f083177987e7b",
+      "upstream_sha256": "98cad17a93a4e434ae8a0648d6a8bde15ccd3221c1e4e5afbafcbfaaf65f0c71"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/math/Color.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/math/Color.kt",
+      "sha256": "ea58acbd5c6829048e0b072c46b807f69105cad2240efe9fa906817e82bb9dbf",
+      "upstream_sha256": "512fee5e544c878b5c88573c38455a075f5f5ce08ef78c7b0547f8b60baefa80"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/math/Math.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/math/Math.kt",
+      "sha256": "786e4d40beceb27d82c790aa4ba3a740003d82c58298140aed2c061d3522a6f5",
+      "upstream_sha256": "c9cb70e33f6f9fced9225a705a94445007d9b08951e118d4de1779321aeefb20"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/math/ModelCentering.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/math/ModelCentering.kt",
+      "sha256": "34e2db464c3b9eb5779946137e8cb0d079535c4804b23193dc27fb917b859e24",
+      "upstream_sha256": "e5d6bc473efdcd4d4b96f05dd93bfeac648061c04f17ec0904954f1190724371"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/math/Noise.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/math/Noise.kt",
+      "sha256": "8a4d045be0256686d9a8789ea721cad281ef9c3c86ff5cabb0b6e3327fbd4a3f",
+      "upstream_sha256": "43ad395a1a89e3555275fce0ed6610cbe268b4b0dfb28266edfa09e086af3c6f"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/math/Platform.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview-core-android/androidMain/io/github/sceneview/math/Platform.kt",
+      "sha256": "8157f5ac58fa2a0567cc9c698eeb5fafb913725f3f051c7da718074caa1e5a55",
+      "upstream_sha256": "8c9a1995484e071e7859062709131fbbeb3d762bb2d9b4bf5a1ee6ccac3f1fa0"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/math/Splines.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/math/Splines.kt",
+      "sha256": "1bbe72cf4140b736194b5c54ec542f757e7397024b5a9b26fec6869f08783761",
+      "upstream_sha256": "253e485ad36cbddd405c77c33f7c1fcb9e2463d4a9e6a812d5fc347f2758e962"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/math/TransformConversions.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/math/TransformConversions.kt",
+      "sha256": "fd3eebfe583352fb0d1306beb0c3df1387f1c15e6a8e4775051722efc669a0a9",
+      "upstream_sha256": "1a9cc9af9735e19ee85ae092b3d399a6468b8176bc28d734a9eb939b38f96061"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/physics/DoublePendulum.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/physics/DoublePendulum.kt",
+      "sha256": "e71fa69a6ac613f0ba98069e009156c36e4391993434eec96f60fa329cfe3fd9",
+      "upstream_sha256": "abc2482ddf58e72f6e6d3ba47634d3ac8ff76c7ef7b97a09a1915ca82c99b85f"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/physics/PhysicsSimulation.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/physics/PhysicsSimulation.kt",
+      "sha256": "3686f16382651a83b9fb1a12e2990cfcca78df3e73fdbc46edb6076c814692c1",
+      "upstream_sha256": "9d96b16b0390eae38c00879c0fa0f00470530ee3bb27f5a963393881e9bbaea9"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/rendering/AssetPath.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/rendering/AssetPath.kt",
+      "sha256": "f5345480fba7c829ea8894787fbf1ff0efdf5aacf79fe9587433539ec0199e34",
+      "upstream_sha256": "7d141b6ecc683470ccf9a765ab8c2cd403c8a00d1f6863e632041952aa5bd940"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/rendering/MaterialDefaults.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/rendering/MaterialDefaults.kt",
+      "sha256": "bd77519aacb28a571ec6b02bf457cda937f5714d1d3746231270612016513412",
+      "upstream_sha256": "61158a49f201aa5a10c47e5e69f1286bf6d85adb2a86149ba2f497e40e03ea07"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/rendering/NodeLifecycle.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/rendering/NodeLifecycle.kt",
+      "sha256": "4a81aa45bd1c3cce80d026dff446a6597d3de35a07a5bffa8ee8faad1ef7763e",
+      "upstream_sha256": "27f38d6fe40c61910414277035397c57246502dfc78991e6ac4e79c81a683cb2"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/rendering/NodeTransform.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/rendering/NodeTransform.kt",
+      "sha256": "8c774089134ae696b6b1d5222faaa63e6593a9b106702d34d56b2ddbb3c0d7f6",
+      "upstream_sha256": "566d798a241ade7aabde4e715f38894fd8ac86f0102898e461df95b3c374117d"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/rendering/RenderingEngine.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/rendering/RenderingEngine.kt",
+      "sha256": "c18d5a816326f85f127eb82329048b8fd97da55ab79f87b1e7ea5e7dca7fd0b0",
+      "upstream_sha256": "545bb36f12dc5f4fd4d0e59fdec929f59026a32cfe197c4ca99ee52dc32f3cd2"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/rendering/ResourceLoader.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/rendering/ResourceLoader.kt",
+      "sha256": "8a18277ca448f8cf63458348a80f5976215ef5457bfcf764ae3c3707dc0f3bc5",
+      "upstream_sha256": "3c9491ec20f7313813886a5d2e6b36b60edcced8c6ddd9b7e4a4be4eb06e7dfd"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/rendering/Vertex.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/rendering/Vertex.kt",
+      "sha256": "ad1aee2e86d8ae3c27f911917d713468e7d4dfdfe10d4dc351515eace86407c8",
+      "upstream_sha256": "72aa3f17ab0b64ed80653b76fdf65d4cee0d4f2e2f99454f26b8d849fcc0ff7f"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/scene/SceneGraph.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/scene/SceneGraph.kt",
+      "sha256": "6b7d68217aba1a43a83f2f3b8bef9ed1943d23c8da51ec4454f267b5b7efe7cb",
+      "upstream_sha256": "6957f8e9b1fdfd18f03822f53222318a3544a90b2f64b938967da4fc1e621b21"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/triangulation/Delaunator.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/triangulation/Delaunator.kt",
+      "sha256": "2f453f9a32bee9d8d908fb7acdbfce6ca7adc63c4fbb1c6cff81b358358c3e00",
+      "upstream_sha256": "90186200e5d4125a1f4e379cb9b991b3efd8d0edfeb559a07d4e03ab8aa03932"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/triangulation/Earcut.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/triangulation/Earcut.kt",
+      "sha256": "a8f5cb02e27551510eed08a010e1a6661b2142107320dc060eea9cfad676efef",
+      "upstream_sha256": "81385e3fdf372e78930b6ed13e716943ad87428f98c85f53d9b74d18730b265b"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/utils/Duration.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview-core-android/commonMain/io/github/sceneview/utils/Duration.kt",
+      "sha256": "c678f0e1e85dbe8837a01a333611b0d17ce4c1cffe0d69de8ccf546d061ebcae",
+      "upstream_sha256": "4af2bcf6ea13de6bd237343c8d546e2262296e687dfec88d551955b79be6d458"
+    },
+    {
+      "file": "sceneview-core/src/main/java/io/github/sceneview/utils/TimeSource.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview-core-android/androidMain/io/github/sceneview/utils/TimeSource.kt",
+      "sha256": "3f74a30dfbdefc3b2232497034300439e62e4f9a3f5e44a7fe47b9c7ca01d65c",
+      "upstream_sha256": "c65f185cb073e6ba584d10b0df4ecaa6eaa6545f63a4f3b9397ab79cced76562"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/animation/AnimatableModel.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/animation/AnimatableModel.kt",
+      "sha256": "a308948f9fdb3e01fe899c49fe5cc3e745729577a72d56628c82025886a62169",
+      "upstream_sha256": "caddaddf9bf07e6fe3a019b6943794492e2b677501ef107fb53317246fcfdae8"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/animation/AnimationState.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/animation/AnimationState.kt",
+      "sha256": "539ba3ae1375c0dc0de33739117aae605f98df931d0ad390d9ca29fd27fca176",
+      "upstream_sha256": "e5cca3fc1dfc073a8700cc63ee0c35048bc7daf24a817ece45a827f44396df37"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/animation/ModelAnimation.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/animation/ModelAnimation.kt",
+      "sha256": "95bc0f582b560c76ce06283bd7421675d89273b352ff1a543375842dc4157c33",
+      "upstream_sha256": "a244f01124ca47a16df55fd222c4198e8f8965b76c80725bda9e0f59bdc423e8"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/animation/ModelAnimator.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/animation/ModelAnimator.kt",
+      "sha256": "7a4d60b3226c4da9e48acb3309e3e77858b810b26f6a448980079cb826a4890c",
+      "upstream_sha256": "f0085f95d1cb4079dd8e577167bf1ad849c7a50cf4ccb58e3e3b13f229a94b1b"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/animation/NodeAnimator.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/animation/NodeAnimator.kt",
+      "sha256": "9c487e7afdc107336ea33c979f1cbc005c2e7b6e754f30a7bd49d25ef42870e3",
+      "upstream_sha256": "e7e7f28417879be1024063b82746d9a4e3b51d232c4228f78885e8acbd7af46f"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/animation/Transition.kt",
+      "status": "omitted_frontend",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/animation/Transition.kt",
+      "sha256": null,
+      "upstream_sha256": "a72aac2641c47be3cdcb65efef35c3b06f3368bf326a2566a97e18a7258549ab"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/animation/VectorConverters.kt",
+      "status": "omitted_frontend",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/animation/VectorConverters.kt",
+      "sha256": null,
+      "upstream_sha256": "075c6d3ac466ba9930216d5614aad797dbd53bf6319d1db51eb480b9136aa023"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/audio/AudioController.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/audio/AudioController.kt",
+      "sha256": "092f9ef236d5f022b6e99483d772155bd333bbf71d3454446a56261afb78d383",
+      "upstream_sha256": "8557d3d6e3a6dc7db837148b92b7169d9a043c5c9e53cc92fea39f913dbf5e26"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/audio/AudioFalloff.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/audio/AudioFalloff.kt",
+      "sha256": "59115ef03fac68415c387e544bfd92420c31c3fc87cd0e2fcd12fff745c54af3",
+      "upstream_sha256": "ffb09cd6f29c1c186b52156229e6138a4a7ea8a7ea842ff08f7b6f72fd345b85"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/audio/AudioListenerSource.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/audio/AudioListenerSource.kt",
+      "sha256": "3a176ad0b3c092608493dd6a431d183e32aebb654fb1875f1c7e7f43596b512f",
+      "upstream_sha256": "7670ae5c4e5a7a7bead37b52525a10564690aa03a33bca72961eb01f1355025b"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/audio/AudioSource.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/audio/AudioSource.kt",
+      "sha256": "2d49301ffaf848e636d60bef6344839a414b14646dd861b12633572a03c24d49",
+      "upstream_sha256": "4f64e4c83a27c448a37e83e710e53785bc580d5b57e5662675ce71fabd6ad7a5"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/audio/SpatialAudioEngine.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/audio/SpatialAudioEngine.kt",
+      "sha256": "d1ac4713b8d06c545810ed7ed4103c70b8d521b5df49aa3a2db3e21cdd938f66",
+      "upstream_sha256": "6ab503a4fc0b3fb2103dd325bf2595ddee8fd5da8531cf6bf63f9cd72452fe78"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/audio/SpatialAudioNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/audio/SpatialAudioNode.kt",
+      "sha256": "7a2cb1168ea113beb02f4114e9e0abfd5affb4dce8ab300be9d752fc365d17e8",
+      "upstream_sha256": "e9802895d38af3bfdcff4452f66fb6719e16e6918051fd1ceb5164d8fcb59af4"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/audio/SpatialAudioPlayer.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/audio/SpatialAudioPlayer.kt",
+      "sha256": "b20a2fc4c06709f7caa84d06b08f495cb901244397112a316b561f587111bc7a",
+      "upstream_sha256": "bb2e18067f0df092872746efc8f8dd0ddc51f8040dfeb76128c632c09d192264"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/CameraFraming.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/CameraFraming.kt",
+      "sha256": "f9497db0a4d51b9d6f132d988d14c73f41e05043e744c6a00a1683daace3837f",
+      "upstream_sha256": "919adb249ef6fa8c1c3c2b69297900bc5aa19d97592952f445fe5b7fd308a90f"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/CameraManipulator.kt",
+      "status": "omitted_frontend",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/CameraManipulator.kt",
+      "sha256": null,
+      "upstream_sha256": "d92faffb689c680fa7d39cff7a4b8404d9469781c2f84cd35625294566863b6b"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/CinematicCamera.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/CinematicCamera.kt",
+      "sha256": "3de067ee6cd63e0e35b9ebb7ddd7be3d1aef6ffa94c6fe6b817ee4ba172b9cfa",
+      "upstream_sha256": "d0771521fb590a625a46bf946a443ae05106b1828be3daf8a74b708d5455db34"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/collision/Collider.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/collision/Collider.kt",
+      "sha256": "1aeb13362142445a4442f944481d5f002da62f143c401deb001dc570cc41b5b6",
+      "upstream_sha256": "a8d2ffbe488776ac348acc110202889cb90360c16bf14ffc43556da13fba4286"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/collision/CollisionSystem.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/collision/CollisionSystem.kt",
+      "sha256": "dc7af0ccb83161d75a80eaf79ef6cb0ace6b722b3d818823970768060c0e2c5c",
+      "upstream_sha256": "891d85ee21238c3c8430b14b6eafe592c6c75a81150e14566ffd536cd0fe6a54"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/collision/HitResult.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/collision/HitResult.kt",
+      "sha256": "9f86993f25a28e62ee5de772f895e1200a30cda29a048427dc20615008feedfd",
+      "upstream_sha256": "3a0cf453f342117244791b489883b219e961d7241b68eba4b12412e949d45a88"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/components/CameraComponent.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/components/CameraComponent.kt",
+      "sha256": "0409028ef918dd5c981af93bc82148c2a88fc78b6eb19b261003fcb8e6ec43ea",
+      "upstream_sha256": "00840be8e353779f2861c4cb02af7ffa13acd04a48f1ca05ea2109b932acfeca"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/components/Component.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/components/Component.kt",
+      "sha256": "fa336b40b6817b84ac3cff29bffdd9a43848860409d45e0b4e30d4b4de48a6f0",
+      "upstream_sha256": "15df065b8ae481686a2734e93a8cf3354144374c521cfb09175d8a2ee3b4d80f"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/components/LightComponent.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/components/LightComponent.kt",
+      "sha256": "d15829ee0604418e6c02c84b0a5f6130ca04be46e38d85fc83ca53a6d24e02a0",
+      "upstream_sha256": "77d3e326c7148f2229aeeb9da6f15fd956c090073991156a02e08d84c66068c7"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/components/RenderableComponent.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/components/RenderableComponent.kt",
+      "sha256": "224fe1d78e8bbbee0ec5b507e6d54b7744e2234451d5a655f29a82f83ca58930",
+      "upstream_sha256": "d67ff4de6c4155e913bb0370bc8902ead24789173b6b8571b206789f15e6f5c6"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/Engine.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/Engine.kt",
+      "sha256": "367ccc65e8d4834e1c68fa8d8e9ebff6802bff2839eaac25ad32ca2b93ae84d7",
+      "upstream_sha256": "81091415884b920fde9c7405ef531f612025f3667cd721c7a5d1885eb262358f"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/EngineDestroyQueue.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/EngineDestroyQueue.kt",
+      "sha256": "40ab7cf0913b7c0e7ba42f8f3e44db9971708441ecbcf7918be95d9ab6c2ad69",
+      "upstream_sha256": "fafafd6e8782269585e0b37264b5f8ddd4f12b471d6c10007af9c88e103b18e9"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/environment/Environment.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/environment/Environment.kt",
+      "sha256": "7957e4eb41eed6dae2e49aa8e4e0d5342103d1385ab1fe34474c019612f152e1",
+      "upstream_sha256": "e28805bcb6244885e96e32dca2323b97fa87df743fc1630b75d402590056988c"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/environment/EnvironmentPresets.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/environment/EnvironmentPresets.kt",
+      "sha256": "21d7339c06765d408923bc1d2f8345153820251036c2e8413ea198e9668365d6",
+      "upstream_sha256": "72991a5f6d3b80bc80655cfa4480de511995f8ce12ee7728c1a9cfe7298ec775"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/environment/IBLPrefilter.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/environment/IBLPrefilter.kt",
+      "sha256": "a15d94c201fe93248a2877c00a8e37125a30a4857c2a410f96ec958c184949e2",
+      "upstream_sha256": "4dee79c88a46f47754a0e261e0db2545c168f93c74c2821bbc8c95f87e9646ee"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/ExperimentalSceneViewApi.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/ExperimentalSceneViewApi.kt",
+      "sha256": "d792d2b469ffd5f7bcf96b6d59c29696fd78cb68700b54ec16cc41c733ad43b6",
+      "upstream_sha256": "cc6ef0fb004c6d98123d989199d88d0eb51e61da581e9853c8b1cfbdeeeb0b7b"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/geometries/Capsule.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/geometries/Capsule.kt",
+      "sha256": "fc29c19802b21e1fc1e5a39435e8243efce2429ade30cab445c1c75622d4ab1e",
+      "upstream_sha256": "c57ee8939cc36dbe5f13f20d70a94e733621c0d4b824ce5fc579d626240ad8fe"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/geometries/Cone.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/geometries/Cone.kt",
+      "sha256": "aebf99f71c7cbec60295751397e363a66d30ad6f607deca859ed8e72eeced4f2",
+      "upstream_sha256": "33c837baadfb2f405e38627737bff1e2110f2b445519d52893c40fa0a61bb817"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/geometries/Cube.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/geometries/Cube.kt",
+      "sha256": "e60977ecd39335b1c2d7756fd8788f6e0ec30df534709c4b429fcaedd55ee5cc",
+      "upstream_sha256": "6f7b7d9d017eaa707125dd3520a3492aea19bbd8c8e98b4623ebe4800e5c0e64"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/geometries/Cylinder.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/geometries/Cylinder.kt",
+      "sha256": "709cf53c638ff4034d60fa7dbeb0aa82ca6fc4986209d587e2a7ab7780ec3c7f",
+      "upstream_sha256": "5ead11929a384247283f1ffd872bafa4213d78cf12a0b50fbf0933dfdcccd56d"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/geometries/Geometry.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/geometries/Geometry.kt",
+      "sha256": "484eb217d92c3a907145944c7a335662b0e5db030877f0c7912a451b472c701c",
+      "upstream_sha256": "b159f4e7f90ecbc4758615a0d1dc62ce58a4afaf236be7fed05da7acdc83d420"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/geometries/Line.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/geometries/Line.kt",
+      "sha256": "97383504dcbe8adf26d2339d5f8f4200976edb2e36747dc87cb12444ce495672",
+      "upstream_sha256": "7711a0ee085f8e0dda899af08b0372957ad3120f8f393e8788de7869af5e7821"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/geometries/Path.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/geometries/Path.kt",
+      "sha256": "65c2a9b9622c75e544e9c7c77c62187fb6b82a6e7ffeb929bb7e60001b5f3854",
+      "upstream_sha256": "7ceb5a06cca77ef2aa9c334eb5c7061db0f88af333875f16320c522e113caac3"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/geometries/Plane.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/geometries/Plane.kt",
+      "sha256": "1937f584b1fb0fa3c0e226c476c67c1870693ca8aa53b30aa7abec323a4e56a4",
+      "upstream_sha256": "3d31d704674429865677ed1a3bff52b16c03b377f14e8a0bf280714760179eb5"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/geometries/Shape.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/geometries/Shape.kt",
+      "sha256": "912299392f783239b174cb65df16e76a892ebe93fe53a3010dd9c9a05c464de2",
+      "upstream_sha256": "f01c36848b854f620b1ccb57141cd5f1fc4bde4c4fad5a3c7d1dc179536ecb55"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/geometries/Sphere.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/geometries/Sphere.kt",
+      "sha256": "1db8b3e51976376894afadf1fe755151cdbfd89dd558b4cd1dbf50ef505f7640",
+      "upstream_sha256": "423f535ff804f503ac46e9d27e413a06bd273ae4f17d226188787c7aa6d32c5b"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/geometries/Torus.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/geometries/Torus.kt",
+      "sha256": "8b9f5b6aa96d8a5af71b68ec77c8035281000bab6afd70ce8987ce752576d425",
+      "upstream_sha256": "2e6ddc6208ea9a490321238cdf47a39d236cfeed2fa753e1c8219abcdcae4d4a"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/geometries/Tube.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/geometries/Tube.kt",
+      "sha256": "f0edb4887dffaf0ff5d5ea497d08c69f22f4154a619667f583698313841fc2d1",
+      "upstream_sha256": "a6525edc7a46a9216b7fff8083d041be81fbf9c6377cd2cd195b2b4bbd65bc1a"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/CameraGestureDetector.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/gesture/CameraGestureDetector.kt",
+      "sha256": "d1ff3b9b074fc66c16826c4e93d8a394139642d393e8622e56f267936dde60f4",
+      "upstream_sha256": "b5ccaadab2fc8941d6e714b07992d234fa56853ccb20b9ad591a07640b7c7c8f"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/CameraGestureMath.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/gesture/CameraGestureMath.kt",
+      "sha256": "b7bfd6264a6fc08d3ac1047e843c14c37cf6ec3f98125b3a3f53ba199e5deff6",
+      "upstream_sha256": "02a458963363a11720763370c45f171ebb5816d6e8cf4171eb2f709e586e1af6"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/CameraManipulator.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/gesture/CameraManipulator.kt",
+      "sha256": "2f514fb1481e619492c1b62c5493ab28ff28e90835b4612b535a5e1e3d03fcd5",
+      "upstream_sha256": "ff6c42d02d140218aa2ca362ce870ed54fe4d603ae7679297a5eeeed9276ddff"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/CameraViewportSeed.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/gesture/CameraViewportSeed.kt",
+      "sha256": "9c6982e5aa309180b4ed7ba190ce10094bfb634a3b3280290426f0e287af9999",
+      "upstream_sha256": "1046c83c0980db3bfd49b8df70c48512a5c03afd9f7ab2f0cea1adefe0b1e775"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/GestureDetector.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/gesture/GestureDetector.kt",
+      "sha256": "50159d3515172b29a8de634e12d23b37d8b47d0e6f69e7a00b64a78c7bf10336",
+      "upstream_sha256": "8f7a579ef511fbba60b2e8a8b923502bb6da999ad50201a8c4a2e9b9e802b53a"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/MoveGestureDetector.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/gesture/MoveGestureDetector.kt",
+      "sha256": "2c1b853102ec6f7eb56896f7602f0a12c7e75ee7984e9bf45d4cb9a76dc12b01",
+      "upstream_sha256": "5e5da8416616ccfeb5d4496033b9281423e03e612fac62c98c3f1e26ac1821b3"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/NodeEditingFeedbackState.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/gesture/NodeEditingFeedbackState.kt",
+      "sha256": "58a71dda575f4a3da7b5c3184318d05e0c8f7ae077af151b7b9f79ba794f0cd6",
+      "upstream_sha256": "c0798d1eb4d13f4f8bee976154a96232b2979ee2ace2093c81c1d356f65a5c8c"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/NodeEditingListener.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/gesture/NodeEditingListener.kt",
+      "sha256": "0cb4550724172dd74193d6b06784f234c05ff34769730610a6462ed6cf41d358",
+      "upstream_sha256": "d4ce1dafbc6531d1f5b345ed2177c43247dd515036e208de9cf1ba44431bd1d9"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/NodeEditingOverlay.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/gesture/NodeEditingOverlay.kt",
+      "sha256": "c9f609598cb6fca5e5bb4fa3b4cc4b59dc43f820f4fc7c22971eac8eb73fc81f",
+      "upstream_sha256": "d82935a283e3eaee10d07b06e41eee347ad779c9b8c5f94da2e06bfb169fcb71"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/NodeEditingOverlayColors.kt",
+      "status": "omitted_frontend",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/gesture/NodeEditingOverlayColors.kt",
+      "sha256": null,
+      "upstream_sha256": "8a5bfb717425e9968c4fae935f8a9ed20552beefb97be8f05170054215d559f2"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/OnContextClickListener.kt",
+      "status": "new",
+      "upstream": null,
+      "sha256": "132efd85729d1a18e352aee0e5b78aad8878ec04c34069ed4b9b39f282589fb7",
+      "upstream_sha256": null
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/RotateGestureDetector.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/gesture/RotateGestureDetector.kt",
+      "sha256": "1ee8a02149831a2497856b3902d9ac8abb080b40936f86e8e91453767ab9dd8a",
+      "upstream_sha256": "1ef334a0bc2e5464f2c12be42d80562ea8d6707464b36dccbc826e01c8dbc52d"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/gesture/ScaleGestureDetector.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/gesture/ScaleGestureDetector.kt",
+      "sha256": "eedcf4a1fc499e932fd3de55a131ff431b8b5a7dfba4d1678e0855b41d8c5cc5",
+      "upstream_sha256": "a00cecfd0a700e0cf1f7273a12e4658dee3a2fe466b5223217d1b100cda42de5"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/haptic/AndroidSceneViewHaptic.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/haptic/AndroidSceneViewHaptic.kt",
+      "sha256": "65d60808f5d06dba6e9af4a0e372e8ed07d7c0f83d687a2b9215582eb073da33",
+      "upstream_sha256": "f15295b0bee8698c89c943128dd012566bcfa02d8d57bc4a2a873dec75b44fdb"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/haptic/HapticEngine.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/haptic/HapticEngine.kt",
+      "sha256": "ce6510eb3c6aaded010725a89cccd6a47ba3e909c5a15d48abb2839b3d5b8a9a",
+      "upstream_sha256": "abf960e2da2c8b3b1bf19549ebf96af65277cbdffc0d9d448ba5a55d8912231f"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/haptic/HapticEvent.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/haptic/HapticEvent.kt",
+      "sha256": "35841278f7b74b13f7816ebda6505781924b8b913a27a1dba1156a009fec9ddc",
+      "upstream_sha256": "31385295afbb2b19076b2d850bf3c9337a9fd1e6fa7a842009ed33ffe4dcc543"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/haptic/HapticPreset.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/haptic/HapticPreset.kt",
+      "sha256": "8f0fd84315c703d5151340fa268249e94338b8a1e829659ffb1248e0a07740c6",
+      "upstream_sha256": "82d7e01fb5a28224cb1e60c3601544f26b0e224839c9bbcda57b0c66b001718c"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/haptic/SceneViewHaptic.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/haptic/SceneViewHaptic.kt",
+      "sha256": "2e156dd15831b006f291959f61354756f9d960d663981db34fb6f2720b9fb67b",
+      "upstream_sha256": "4368f90c7501864748959748c8dae90b093941ea97611259497bfe2220e7060a"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/loaders/EnvironmentLoader.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/loaders/EnvironmentLoader.kt",
+      "sha256": "7faa76b22ff56c1a47035c0225b3c890881558604931e48a36be37d85a16e5de",
+      "upstream_sha256": "393797ccb64ec9555386c1917dcf9a64825b0b5f0c6ade105063ebb721f87418"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/loaders/MaterialLoader.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/loaders/MaterialLoader.kt",
+      "sha256": "3cc2625cc54d38387855317e5ed5ec6b2904b020b2ddd4a790382c2d44c3bb91",
+      "upstream_sha256": "5f593239726579f2c1c1c27a70fa4eb9c3be1a3bac410e6ed64e2415a2f8ed82"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/loaders/ModelLoader.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/loaders/ModelLoader.kt",
+      "sha256": "c7cdc71902c6f4f3e1284d0ead55d204e87e4482ac1475589f9754691db36700",
+      "upstream_sha256": "69c5cfb8a1b8d8f4e684ec1d56d1776f17e617f8a17119f760ba05552b438a0d"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/loaders/StlModelSource.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/loaders/StlModelSource.kt",
+      "sha256": "f526d56ad8478e9b32142947d188847db57d885b3da98296b80b3baaf631fa42",
+      "upstream_sha256": "bb43fe6926dd8c9595129f0613d89a9d567da30c95cf91b82c6d50def0271040"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/loaders/WebPTextureTranscoder.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/loaders/WebPTextureTranscoder.kt",
+      "sha256": "5cfc9a5c9be602557dddfa5ca2cb39d967e4a5271661c32fa568d80b400324e5",
+      "upstream_sha256": "b96dbd9ce3c37266fd9826bb1d1942f38f508e2b32261c84cdb579637f13a0fc"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/managers/LightManager.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/managers/LightManager.kt",
+      "sha256": "2ade2789ababf956ece92c4f7a7aca73af2963aa881cfe7470e313e4c9139c05",
+      "upstream_sha256": "7be4579a4a1b727e65a6718144bd1275dea1f5d6559d8c3acbb75241345cc4a4"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/managers/RenderableManager.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/managers/RenderableManager.kt",
+      "sha256": "dc3a363bbc65cbc9ae58b57c7fae584d879c8186467df25ca1b323efd23aa16e",
+      "upstream_sha256": "8b39760f14db7adbe231a0a61fb1f75f4ef718a5acf4e9563b9bb9c7914d34ab"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/managers/TransformManager.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/managers/TransformManager.kt",
+      "sha256": "c9dfdf7e2f84c5f59b8fa16162cc816928dc276bc183dfd66fa03f792e04ea45",
+      "upstream_sha256": "ecb458271461573b2919efa90174131d089f4be762b8be0a3bbbe4fe37ab3fcc"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/material/MaterialInstance.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/material/MaterialInstance.kt",
+      "sha256": "4a07a2c22c3019e479a471791f20d300d78c98a212fe539178318fffaf5e28ca",
+      "upstream_sha256": "bc3014f98634d363725c89c08026f1ed60f60257582e8c82cc77172dc819c767"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/material/UbershaderInstance.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/material/UbershaderInstance.kt",
+      "sha256": "61070f7b51a6f9c173519f03e2ba31006d342251f4f462f853a1a685c0d93dff",
+      "upstream_sha256": "6b9f1b86c39f47f2ad780bf01bde126d624560e5e5da5de1bb510c4c25e6c886"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/material/VideoMaterial.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/material/VideoMaterial.kt",
+      "sha256": "1b8c8b32328b3cca0c8e7418c484f65068bd051eebd1e3072131ad77ab7eb328",
+      "upstream_sha256": "16aa11e36414be75e90196b520e6c918b35c190e9cee20056885be72cb7e4fe9"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/math/Math.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/math/Math.kt",
+      "sha256": "d1767325da7204d5219c607972f900ce06dd63811cfce6e4a3855cc19f53a13c",
+      "upstream_sha256": "c84b1f6c1b5e8bd56274d8e37e2ebc29e3672a6a3f3b28aaa71641c6d3956d7d"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/model/Model.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/model/Model.kt",
+      "sha256": "cc834509057600e55df7afc121f91e559e546cf6855290c5e941fc5b6f11fb4e",
+      "upstream_sha256": "b07b1f0b103c991f33a227fa062b0cfb8f33f424e677f73a27aac26336073dc6"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/model/ModelInstance.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/model/ModelInstance.kt",
+      "sha256": "0ec015cc47700c465ec5511cb01c70aa3f7a093a98b9ddb7450f31b874d63c79",
+      "upstream_sha256": "02a26231ce416a7a9c77b8e9b0810f32cc1fc6a646e0e494d7bb899f00dfe9ce"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/NativeSceneResources.kt",
+      "status": "new",
+      "upstream": null,
+      "sha256": "41d81ed20264937fc4f17c735a010cca4d8f78f4a0100a0f09f6cd89185aff50",
+      "upstream_sha256": null
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/BillboardNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/BillboardNode.kt",
+      "sha256": "cc499baee00b53bae06f6a82f3c0781fdc0b3602846716715c36b12ef13783a7",
+      "upstream_sha256": "c0350cefb26451fa84cc1a86f6dc17b8e28807cb0c5e58db0516578221dfa8f8"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/CameraNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/CameraNode.kt",
+      "sha256": "e6fe15e219d23d1937618a4a8308be9ec15e62e8932dfbeddb3e6deb9253b61a",
+      "upstream_sha256": "172873740cd0d6e69d6d07024d830797b927527b3f62805babd687aade7cc4a5"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/CapsuleNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/CapsuleNode.kt",
+      "sha256": "d0ebd917652bca475963a10ed3f935abd853f54a45b9011a5a01be7e04ab7889",
+      "upstream_sha256": "527c53d79be388c619b3408e4cc630ad50184d3e4dc74fa12545054d0b07b9a4"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/ConeNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/ConeNode.kt",
+      "sha256": "5c87351ab6ec6a402f2731a19df6e2250b4780c3a3777071d39a462faa7d8002",
+      "upstream_sha256": "94f789bb06d7970b0dcc31b9f9597549349cc10fb782fcbdb08deddbd9a8dd57"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/ContactShadowNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/ContactShadowNode.kt",
+      "sha256": "4012377a9572179396a165ccbb6574e937493c230aae9de46ee8ca1a2ddb4b4e",
+      "upstream_sha256": "b1fff3a62777ffbf17e4d3092e6d424e71b79741b3dee4f6d59cde1d7c4ab91c"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/CubeNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/CubeNode.kt",
+      "sha256": "8a6e65a92cb65c0275ba954924213179317bd32a529a9ff7c421a2ffe1ba74de",
+      "upstream_sha256": "f2d96785593393aab373c0c36099b71b1251a5d9532809ea2ec13dca1eb4c119"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/CylinderNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/CylinderNode.kt",
+      "sha256": "82d7c9882ae1ea4d97faf13ec8fd3f2d1d5f1de3b0a2f30b66ef8f9104d1212f",
+      "upstream_sha256": "fb557974110fc2049d8dd3304a5cc7a0e46dc717e2ac7f4c0f2de4c1e5bd4292"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/DynamicSkyNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/DynamicSkyNode.kt",
+      "sha256": "469f39f99fc38ecfa98ea2e7333534d29c89a59f00c637075aea2041fdb46e33",
+      "upstream_sha256": "12168cdc6b8620247793a1856597786b42f55b4d8a2f4362f42ee547a28d22fe"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/FogNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/FogNode.kt",
+      "sha256": "0e266b955178f3ca72c2f5281a95539aad058ce14b028c2e9e481aa1b1f65ab3",
+      "upstream_sha256": "db1ed20efc9dc7fb1b9977240cfb8f614d29b5cc030c4380bc215d9b7bf1093f"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/GeometryNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/GeometryNode.kt",
+      "sha256": "d94fc3d0fb0dc89aaa1a4671b3b0118336d2c667ab9d5ad8b3d19f7c3545f405",
+      "upstream_sha256": "b0c640999cc658f3bc8d0ab16a4d7e7c76adc5088697b2f27c66420f8ebd17ac"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/ImageNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/ImageNode.kt",
+      "sha256": "773e09c29ee649d7cc7291deafe03e20309704e758eb063c77c577ca1f388beb",
+      "upstream_sha256": "ffe6e7a2271ef70b76c1268fb5e8b78008199746d821feda28e60a56712e425d"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/LightNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/LightNode.kt",
+      "sha256": "7ba0d64a8f594e9386c84c5dbfb32c769f321f477257205f1c46243c9b42f7dd",
+      "upstream_sha256": "200820d523a384e45bc92c011644c532031b46f9b322f344b1b9ccd1bb9fa3a8"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/LineNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/LineNode.kt",
+      "sha256": "e3a23812049fb222d487a0d0e7e884d50a1f799010a4db5542cfd2fce95fdf99",
+      "upstream_sha256": "856f9acc80addac95e1113734120c6633d09aad7c795c3d4abecb504744d62e8"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/MeshNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/MeshNode.kt",
+      "sha256": "f22ee8471cc223ebf2fe87521867ad734a6f2243e816d0b87c8dda38100dc165",
+      "upstream_sha256": "a7d5150fc6e49876236ac7fd3b6a19b5a8e5652f5af73061458a00bac592b457"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/ModelNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/ModelNode.kt",
+      "sha256": "c6a98086889e2faaf5845fafcf9c67222157e4e7481e5832e49da4f3c0f817f1",
+      "upstream_sha256": "4c788a3064a54f1931bba8aa9850917da9de1b0564c0b080cf54638462a20afd"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/Node.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/Node.kt",
+      "sha256": "569e9a5afe0f63ea3fb45c087cab3a87f36887e41a4ecaeab706307b3f16be50",
+      "upstream_sha256": "7c633e6a9600815822262c6480da124b09ae03a90b4f650dd26460df258767cb"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/NodeAnimationDelegate.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/NodeAnimationDelegate.kt",
+      "sha256": "ff3a04d52bbbeea57f983048dbfdff9c15118dd035c3765bae52c0df6d9d72a8",
+      "upstream_sha256": "d2d5a91b560df739ae622d9bf00030df204eaee732713069d1f7b2cc353b8efb"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/NodeEditingDispatch.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/NodeEditingDispatch.kt",
+      "sha256": "9e597b9377e5539df0b960d98de1a68bbcd26df458e910814110f4a89ec5114b",
+      "upstream_sha256": "d5eddcf35ebf7156797b61743fc0c01def04f5286ac068ea7d5173cfc286df2f"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/NodeGestureDelegate.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/NodeGestureDelegate.kt",
+      "sha256": "e721f3413bb4813e76af6cb986b510e6c0e08edc37ccec6ec1411ea9d5eae31b",
+      "upstream_sha256": "dd551888724509f6fe357004bfdc5c16229dbfcc5fb4245f375e3082d0ebffbd"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/NodeState.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/NodeState.kt",
+      "sha256": "eb0308d5f5db387117b8c32ed34d510a78fc76df049090e013d6dc66811b214d",
+      "upstream_sha256": "17c4b3b08f4325822a889ba462782db0a84e7f8a8d20f2d21769baaae1bbb9e1"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/PathNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/PathNode.kt",
+      "sha256": "ce774dc976567c2e439ff8775c11e5e8896d581c05c60edced2ed76be0b5576d",
+      "upstream_sha256": "dae80381cef45d644ba1b2a87cea97d71985d6cfc71d7ee9984391015b8f500e"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/PhysicsBinding.kt",
+      "status": "new",
+      "upstream": null,
+      "sha256": "9d3ac713e61c639d22225c1a0f57c80c729722c6a86b4137cd4e287c1e477fac",
+      "upstream_sha256": null
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/PhysicsNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/PhysicsNode.kt",
+      "sha256": "5fc7b7cb95640cceca756def30cbe4890615ce19949a78d61c770fd9700c7cfe",
+      "upstream_sha256": "d9024f5381d0d6754483b318de67e282e556b3b6f0479bcf60d5e3a51e0a99c7"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/PlaneNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/PlaneNode.kt",
+      "sha256": "2414be07cc87feccfc12ba4809d5c618c76daf454f0be962c5df26a9b1be37e0",
+      "upstream_sha256": "fb0087a148e4617c5c0b146c680e7cdd7afee97d4883860dd6890a0977f22545"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/ReflectionProbeNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/ReflectionProbeNode.kt",
+      "sha256": "1b96584834d4cbfd5f68f82cb7c1a21fcbd7840eadfbf8d24946231aa8e77608",
+      "upstream_sha256": "03ce99aec2df242429db74310284b4c9dfebe986b08df809e969443711d28f4c"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/RenderableNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/RenderableNode.kt",
+      "sha256": "f6c43a7b9cd60ed6fd29fd19193b8dea41dd01c52ea179308c58b9226a20e187",
+      "upstream_sha256": "f7d0a993c37998ef73e5a77d04b62a5fdccb3082d38f139bfb6a468345e21882"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/ShapeNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/ShapeNode.kt",
+      "sha256": "b1b0be35a2b486f8c785f8eba3073fe9e3025d7028374032018398ec96b1edd8",
+      "upstream_sha256": "fd760d32d0b74a1c0346574606aa4bb0ef9bf6d19a4df1ac2138194c82a189be"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/SphereNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/SphereNode.kt",
+      "sha256": "58547e2653346f407db1c028aac2fe6db0d5209602b8b45863295777a56de7fb",
+      "upstream_sha256": "3ced4fa6450718462245c2727c7ee0e5e922ec26cd903455ba48fcb378d69a8b"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/SplatNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/SplatNode.kt",
+      "sha256": "d577dceea0684ab1cd5da2b9a1207320c4b459d324499d5a6b33b31adb7250c2",
+      "upstream_sha256": "f25e7e426098e3cef54f86498f46aa38cbfb89261a4b753faf393f11bc154434"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/TextNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/TextNode.kt",
+      "sha256": "ee2aeaf6099c9d9250e424307a8b0233a0a251a6d592c9f73ce44ddffdd74d59",
+      "upstream_sha256": "58639721b0d2f294ab9f39e6ca238734bbe98d2491e3b15e6906a0ce0f1586e2"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/TorusNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/TorusNode.kt",
+      "sha256": "d1bc343d399e518142379281f404a1110a9af1a9c0e311fb581ada8295cd7c49",
+      "upstream_sha256": "9aa805cf5440aa0d5e01cd049ef55c13dd714dbc63a7d973d299b2036689e9d5"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/TubeNode.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/TubeNode.kt",
+      "sha256": "d018b5956320b5b6347ec4c7bda9c81f6c685583eff093659dde4a61132a39cd",
+      "upstream_sha256": "065de1749512510115d395c9839dae6fcf83cb8772fc76691f5600b528ece082"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/VideoNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/VideoNode.kt",
+      "sha256": "f8242fd20cdc465777a0f96f44ce52f297b6665e0c8a91d107f0df8497e881ac",
+      "upstream_sha256": "4e314490342348a74798c0ae46e6f185c3d3fe3543987bd64cc387f63277181f"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/ViewNode.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/ViewNode.kt",
+      "sha256": "c2168654cc35013a4dc5eb89eb4aa9955275f08433c078fd19ef13d4eaf3fbe8",
+      "upstream_sha256": "c83c9b33a0b778231322de2cb3f95034bb43a633f03f96b5893cb42cd74d81f2"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/node/ViewTouchForwarder.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/node/ViewTouchForwarder.kt",
+      "sha256": "6b90dc4c4a11c48003dabe4cc8112d614139beda0a18afc34b8850c4690d2126",
+      "upstream_sha256": "80d61e06a1293b873b68b9ea508e172ad4b831e517e68ebad58cb5304a3ac53c"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/RenderLoop.kt",
+      "status": "omitted_frontend",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/RenderLoop.kt",
+      "sha256": null,
+      "upstream_sha256": "e9786da0564faf38e314071c653c1f6fa2242ffe56a86a68367113703260a1d6"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/RenderQuality.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/RenderQuality.kt",
+      "sha256": "1c2e02218af188225acc2e5cdec4e9850999bb06e665d84a5a3c21a59c873305",
+      "upstream_sha256": "a8bca3260b4cc161dffd7e33606b292eb3089160358f4fe4cb37d48746040db6"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/SceneAutoCenter.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/SceneAutoCenter.kt",
+      "sha256": "bae324f8da8e5551ed4dc7a8515f96dba3ee6019461b59e70dbdeafe2593c93d",
+      "upstream_sha256": "7ea923c0a830ceadf982ed115801c1b648af780940f752779462928dba0df35d"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/SceneFactories.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/SceneFactories.kt",
+      "sha256": "92e7557c321011d9088bddc3bde0c855a50e228cd426ddbb85ca12832b2d4f3e",
+      "upstream_sha256": "3463964495e459f5840b7d1f139e01ed9451297d4a37f7c383ff917b8dc96925"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/SceneNodeManager.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/SceneNodeManager.kt",
+      "sha256": "380438bde717f7285a9c4de794736c6585dbc5b52883d8c3391bf9892cb4e99e",
+      "upstream_sha256": "a23ee0cf8bb33621ba9502ed1acbd79fa5d1633d6bd68c55ba3e0f5a3ba7e8b5"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/SceneRenderer.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/SceneRenderer.kt",
+      "sha256": "a5e9da454d070df20f4164882ecaf743964514ea5efe9e0d52f17b454eaa3b3b",
+      "upstream_sha256": "561219ef77dec45887b0e2aeedb63cd3754d5b33e7be624667f254a6f0ee121f"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/SceneScope.kt",
+      "status": "omitted_frontend",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/SceneScope.kt",
+      "sha256": null,
+      "upstream_sha256": "8ba27a48eed9bbd29fa13e8b08838562f65f1c6ce4d7568aa64e9986084f0826"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/SceneView.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/SceneView.kt",
+      "sha256": "2da38591d5b41a8defec19d38128cbc17def3380ded498dec366918fea1fbe9e",
+      "upstream_sha256": "4f8e09524cea41c37fdce56ceac4c7f34dc45a412dddf762c1cbf72df2393534"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/splat/SplatBuffers.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/splat/SplatBuffers.kt",
+      "sha256": "4cf6c7682b3988f31a83efd16bbcc03964b0bf874a050521e37c4ee369cf2058",
+      "upstream_sha256": "f2e270d1c3ae7c5bc7587c085a703bcd131130f1acf9894698f50517923710c6"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/Splat.kt",
+      "status": "omitted_frontend",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/Splat.kt",
+      "sha256": null,
+      "upstream_sha256": "52d123f244d2c09f18b5b0625ed20426526bca99e8a79f9d8a3102a275b34971"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/SurfaceMirroring.kt",
+      "status": "omitted_frontend",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/SurfaceMirroring.kt",
+      "sha256": null,
+      "upstream_sha256": "564880bd2e5f9a3a05d08e9d2ec208ef5a9449760c7516381f70b1c014bd1e9f"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/SurfaceType.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/SurfaceType.kt",
+      "sha256": "eb1da1dca1861716e37e17f072c43eb34ed0be98be2e325e43d5ca54aff07531",
+      "upstream_sha256": "9ad585dc40db9f9036b7cf8d2a53674a7814f6426c0c76ac1e32bc71fa9326db"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/texture/ImageTexture.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/texture/ImageTexture.kt",
+      "sha256": "748aae0229281e88f678be7114b5f1ce09c872d0b4703925a8d924811965d3d9",
+      "upstream_sha256": "c2c55b68423a43063ab945e8cbc65caef96104bc33a42fbafb3096cd905ef103"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/texture/Texture.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/texture/Texture.kt",
+      "sha256": "e231611b8d9e25c5e36f59ba6f090b818c8c54c0884afbc5c5e520866b607e56",
+      "upstream_sha256": "e2d0f2f95283e09b82068d73a1731022c61458102c5e9eb8171a9d32f3ff760a"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/texture/TextureSampler.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/texture/TextureSampler.kt",
+      "sha256": "b2d3f7f919f1a6bfeaf7f14f5805b24713fb6f569f4939ea52c8179a5e74d08e",
+      "upstream_sha256": "ed703f496cbf6cf71a16ec44c00b617c81a4bdc6885352cb2ced43f30a28c38e"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/texture/VideoTexture.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/texture/VideoTexture.kt",
+      "sha256": "d057192de48957614fef611dcb642a8ac6450b4e4350807d67cb0e2094a057fe",
+      "upstream_sha256": "df15e297ac9d95699fa74de82b5a2d69fc07f718b54552fca6f87e33ead1c6b0"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/utils/Activity.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/utils/Activity.kt",
+      "sha256": "c542e99493fbd1810d975ca7755d186f905bdd0619e555dafd3b64c779f1fcc5",
+      "upstream_sha256": "a8892a1a9dbaafeadc24f0f014d48dd3f702565a9fd128449163ea969fbda816"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/utils/Camera.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/utils/Camera.kt",
+      "sha256": "d750dad0975fd11bf66d64dbf1b48fe0ead785edfe939f88685ddcf79156ef7a",
+      "upstream_sha256": "39ed93cb9c3d43706e935b25680597b23a013a581bae2e88321e7b7ec0d4ef31"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/utils/DebugOverlay.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/utils/DebugOverlay.kt",
+      "sha256": "a42b48b57a2fd4da1f159175611c7184df76f33aefd10e276e422872e0e314af",
+      "upstream_sha256": "85439cf7c122cd339c3dcb0bec1ec06926a1498af3d719184d805a73f89c79df"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/utils/File.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/utils/File.kt",
+      "sha256": "d6a83d66b44a0cf4b0c9d5ff3270cbd7fc36556d7b5532eec025dc921aa21724",
+      "upstream_sha256": "f696ab3beafdb21351dc30e8c7e651dff3702d2e4199a4497a7afcd0ee503ea4"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/utils/FileCache.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/utils/FileCache.kt",
+      "sha256": "8218dc39b1702e1ee65f54270383225f91dea169c62879b9869a79f1ae0e3298",
+      "upstream_sha256": "f55d78ddb4ff2819f8bbd96a0c7f59210cbc850be46907785da030467d878cb4"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/utils/OpenGL.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/utils/OpenGL.kt",
+      "sha256": "dea4f4b165242deab91c82d764436b99da32d439d7050dfd2d77042848236c47",
+      "upstream_sha256": "7ca3a4c0243cd474d07371f835117406d95d431afbd51b10e4429768b38ce7a2"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/utils/SceneInspector.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/utils/SceneInspector.kt",
+      "sha256": "b3918cc9bd883bf0c5c7a63ab9efadce811737539ed7bba8e65e0ba32d1b3873",
+      "upstream_sha256": "9b537eeed3ada0c68e1de27cf4b59ccb7970556536aeefb81e82e0522e038611"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/utils/SurfaceMirrorer.kt",
+      "status": "modified",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/utils/SurfaceMirrorer.kt",
+      "sha256": "68bb49962d9a5176c6490470efd330e5b06bdb9522fb21fada1276db012ae24d",
+      "upstream_sha256": "f8f9668f4e700a1fdcf6a5472627c327a85332cb8442c57a007ab7e271549c62"
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/utils/SurfaceTextures.kt",
+      "status": "new",
+      "upstream": null,
+      "sha256": "1dbf266891227bd99f19db55125636c6562b196a37c09b8c897b8976e9c39bad",
+      "upstream_sha256": null
+    },
+    {
+      "file": "sceneview-native/src/main/java/io/github/sceneview/utils/View.kt",
+      "status": "unchanged",
+      "upstream": "upstream/4.35.0/sceneview/io/github/sceneview/utils/View.kt",
+      "sha256": "499bd269549ee75186c5d34e2ddddf2806753eca977c06edbe8c89a62fb21d5e",
+      "upstream_sha256": "dfc9554f342415ab8ab460d357e562798d890ef16ffbf34d64ccf20c6e087954"
+    }
+  ]
+}

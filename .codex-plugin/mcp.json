@@ -1,6 +1,0 @@
-{
-  "sceneview": {
-    "command": "npx",
-    "args": ["-y", "sceneview-mcp"]
-  }
-}

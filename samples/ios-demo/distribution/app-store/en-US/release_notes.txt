@@ -1,5 +1,0 @@
-Explore now searches the online model gallery as you type. Results narrow after two characters, and the screen always tells you which state it is in — searching, nothing found, or offline with a Retry that actually retries.
-
-Every bundled model in the viewer list now shows its thumbnail, Cyberpunk Hovercar included.
-
-Plus the usual round of rendering and stability fixes across the 3D and AR screens.

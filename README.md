@@ -1,617 +1,160 @@
-# SceneView
+# SceneView 4.35.0 原生 Android View 版
 
-> **3D & AR for every platform.**
+这是基于 [sceneview/sceneview](https://github.com/sceneview/sceneview) 的独立原生 Android View/XML 移植工程，仓库为 [JLAndroid/sceneview_native](https://github.com/JLAndroid/sceneview_native)。上游基准为 **4.35.0**，本工程不是 SceneView 官方发布物。
 
-Build 3D and AR experiences with the UI frameworks you already know.
-Same concepts, same simplicity — Android, iOS, Web, Desktop, TV, Flutter, React Native.
+以 **SceneView 4.35.0** 的 Android 3D 源码和 **Filament 1.72.1** 为基础，改为 `FrameLayout + TextureView/SurfaceView`、XML、普通 Kotlin 对象与 Android 生命周期。编译模块不声明 Compose 依赖，也没有 Compose 编译插件；Gradle 配置加入了拒绝 Compose 传递依赖的规则。
 
-<!-- Platforms -->
-[![Android 3D](https://img.shields.io/maven-central/v/io.github.sceneview/sceneview?label=Android%203D&logo=android&color=34a853)](https://central.sonatype.com/artifact/io.github.sceneview/sceneview)
-[![Android AR](https://img.shields.io/maven-central/v/io.github.sceneview/arsceneview?label=Android%20AR&logo=android&color=34a853)](https://central.sonatype.com/artifact/io.github.sceneview/arsceneview)
-[![iOS / macOS / visionOS](https://img.shields.io/github/v/release/sceneview/sceneview?label=Swift&logo=swift&color=f05138)](https://github.com/sceneview/sceneview)
-[![sceneview.js](https://img.shields.io/npm/v/sceneview-web?label=sceneview.js&logo=javascript&color=f7df1e)](https://www.npmjs.com/package/sceneview-web)
-[![MCP Server](https://img.shields.io/npm/v/sceneview-mcp?label=MCP&logo=anthropic&color=d97706)](https://www.npmjs.com/package/sceneview-mcp)
-[![Flutter](https://img.shields.io/badge/Flutter-v4.37.0-02569B?logo=flutter)](https://github.com/sceneview/sceneview/tree/main/flutter)
-[![React Native](https://img.shields.io/badge/React%20Native-v4.37.0-61DAFB?logo=react)](https://github.com/sceneview/sceneview/tree/main/react-native)
+此前的本地交付记录显示：**已构建两个 release AAR，并用实际发布的 AAR 成功打包示例 APK；尚未做真机验收。** 当时实际依赖解析通过，示例依赖图没有 Compose 组件。该记录不代表此后每次源码修改都已经重新构建。本次仓库整理仅做离线结构检查，没有执行 Gradle。接入先看 [DELIVERY.md](DELIVERY.md)，历史验证范围见 [VALIDATION.md](VALIDATION.md)。
 
-<!-- Status -->
-[![CI](https://img.shields.io/github/actions/workflow/status/sceneview/sceneview/ci.yml?branch=main&label=CI&logo=github)](https://github.com/sceneview/sceneview/actions/workflows/ci.yml)
-[![License](https://img.shields.io/github/license/sceneview/sceneview?color=blue)](https://github.com/sceneview/sceneview/blob/main/LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/sceneview/sceneview?style=flat&color=yellow&logo=github)](https://github.com/sceneview/sceneview/stargazers)
-[![GitHub Release](https://img.shields.io/github/v/release/sceneview/sceneview?label=Release&color=1a73e8&logo=github)](https://github.com/sceneview/sceneview/releases/latest)
-[![Discord](https://img.shields.io/discord/893787194295222292?color=7389D8&label=Discord&logo=discord&logoColor=ffffff)](https://discord.gg/UbNDDBTNqb)
-[![Sponsors](https://img.shields.io/github/sponsors/sceneview?label=Sponsors&color=ea4aaa&logo=githubsponsors)](https://github.com/sponsors/sceneview)
+## 仓库内容与来源
 
-## Try the demo apps
+保留 Apache-2.0 的 `LICENSE`、`NOTICE` 和源码版权声明。修改与上游文件的对应关系见 `PORT-MANIFEST.json`；`upstream/` 保存移植依据和哈希校验所需原件，不参与模块编译。
 
-See SceneView capabilities in action — install the live demos in one tap:
+Git 仓库仅提交源码、必要资源、Gradle Wrapper、配置、文档和校验工具。`build/`、`.gradle/`、`.kotlin/`、日志、`local.properties`、本机工具目录 `.build-tools/`、交付目录 `dist/` 以及兼容性示例中的生成 AAR 均不提交。全新克隆不会包含预编译 AAR 或本地 Maven 仓库。
 
-<p>
-  <a href="https://play.google.com/store/apps/details?id=io.github.sceneview.demo"><img src="website-static/assets/brand/stores/google-play-badge-trimmed.png" alt="Get it on Google Play" height="56"></a>&nbsp;
-  <a href="https://apps.apple.com/us/app/sceneview/id6761329763"><img src="website-static/assets/brand/stores/app-store.svg" alt="Download on the App Store" height="56"></a>&nbsp;
-  <a href="https://sceneview.github.io/playground.html"><img src="website-static/assets/brand/stores/web-playground.svg" alt="Open the Web Playground" height="56"></a>
-</p>
+使用 Android Studio 打开仓库并配置自己的 Android SDK；默认示例直接依赖本地源码模块，不需要 `dist/`。`compatibility-check/` 是独立的 AAR 接入验证工程，需要先准备两个当前版本 AAR，详见 [DELIVERY.md](DELIVERY.md)。
 
-Browse all sample sources in [`samples/`](samples/) — Android · iOS · Web · Desktop · TV · Flutter · React Native.
+## 文件在哪里
 
-> **Tip** — every demo opens directly via `https://sceneview.github.io/open?demo=<id>`. For example, `…/open?demo=ar-rerun` lands straight on the AR Rerun debug screen with a single tap from any QR code or link.
+| 路径 | 内容 |
+| --- | --- |
+| `upstream/4.35.0/` | 未修改的官方 Android 源码包、对应 AAR、解压源码和许可文件 |
+| `sceneview-core/` | 数学、碰撞、几何与模型格式解析；合并 commonMain 和 Android 实现 |
+| `sceneview-native/` | 原生 View/XML 库、渲染与资源管理、节点和加载器 |
+| `sample/` | 普通 Activity + XML 示例，不使用 Compose |
+| `tools/verify_native.py` | 无需 Gradle 的源码/资源结构检查 |
+| `PORTING.md` | 移植范围、API 差异、资源所有权 |
+| `VALIDATION.md` | 已检查内容与待验证步骤 |
+| `PORT-MANIFEST.json` | 源码和上游映射、修改/新增/省略列表与 SHA-256 |
 
-## Open any 3D file, at real size
+这次复制的是 Android 3D 库及它需要的 core 源码，**不是整个多平台 Git 仓库**。ARCore/ARSceneView、Compose 多平台、Web、iOS 和官方演示 App 不在本工程中。归档目录保留上游 Compose 源码用于比较，但它不参与任何模块的编译。
 
-SceneView reads the files people actually receive — from a download, a chat, a 3D-printing site or
-an AI assistant — and shows them at their real size, in 3D and in AR.
+版本依据：2026-09-16 保存的 Maven Central 元数据中，`latest` 和 `release` 均为 `4.35.0`，元数据更新时间为 `20260911073651`。记录见 `upstream/maven-metadata.xml` 和 `upstream/provenance.json`。
 
-| Format | Android | Apple | Web |
-|---|---|---|---|
-| glTF / GLB | ✅ Filament | ✅ RealityKit | ✅ |
-| 3MF | ✅ pure Kotlin → GLB in memory, millimetres honoured | — | — |
-| STL (binary + ASCII) | ✅ pure Kotlin → GLB | — | — |
-| OBJ + MTL | ✅ pure Kotlin → GLB, material colours | — | — |
-| PLY (binary + ASCII) | ✅ pure Kotlin → GLB, vertex colours | — | — |
-| USDZ / Reality | — | ✅ RealityKit | — |
+## 先看示例
 
-The format is decided by the bytes, not the extension: a `.3mf` that arrives as
-`application/octet-stream` with no file name still opens. The Android demo app is an "Open with"
-target for these files, so a file tapped anywhere on the phone lands in the viewer, then in AR.
+用 Android Studio 单独打开本目录。所需构建工具和依赖已在本机完成首次下载；其他机器仍需准备对应环境。
 
-Two apps built on SceneView are on Google Play:
+示例源码：`sample/src/main/java/local/sceneview/sample/MainActivity.kt`。
 
-- **[AR Model Viewer](https://play.google.com/store/apps/details?id=com.gorisse.thomas.arcamera)** —
-  open any 3D file (GLB, glTF, 3MF, STL, OBJ, PLY) or browse thousands of free models, and see
-  them in your room at real size.
-- **[Will It Fit](https://play.google.com/store/apps/details?id=com.gorisse.thomas.willitfit)** —
-  type a sofa's dimensions, or pick a stand-in, and see whether it fits before you buy.
+它演示：
 
----
+- XML 创建透明 TextureView 场景，模型后面有普通 TextView。
+- 从 assets 加载自生成的 `learning_cube.glb`，播放名为 `Spin` 的动画。
+- 切换棋盘纹理，再恢复 GLB 原始材质。
+- 普通 Android 按钮和覆盖层显示在模型上面；打开覆盖层时不会隐藏或移除 SceneView。
+- Activity 生命周期驱动渲染暂停和释放。
 
-## Quick look
+示例覆盖的是普通 View 层级。你项目里的视频“小屏放大”若本身使用 SurfaceView/独立 Window，还需要在那个实际窗口结构中测试，不能仅凭示例断言已解决。
+
+## 工具链和接入限制
+
+| 项目 | 版本/要求 |
+| --- | --- |
+| Android Gradle Plugin | 8.2.2 |
+| Kotlin 编译插件 | 1.9.0 |
+| Kotlin 标准运行库 | 2.0.21（Filament 的传递依赖） |
+| Gradle 发行版 | 8.2，已固定 SHA-256 |
+| JDK / 字节码目标 | 17 |
+| compileSdk | 34 |
+| minSdk | 21（Android 5.0） |
+| 示例 targetSdk | 34 |
+| Filament / gltfio / filament-utils | 统一 1.72.1 |
+| kotlin-math | 1.5.3 |
+
+AndroidX 原生适配使用 Activity 1.8.2、Lifecycle 2.7.0、Core 1.12.0、SavedState 1.2.1。Activity 1.13 会间接引入 Compose 注解包，所以没有继续使用；SceneView 和 Filament 版本保持不变。
+
+本版本已对 Kotlin 1.9.0 / AGP 8.2.2 / Java 17 / compileSdk 34 做二进制接入验证，未修改原业务项目。Filament 保持 1.72.1，其传递依赖仍包含 kotlin-stdlib 2.0.21 和协程 1.9.0；不要强行锁回 stdlib 1.9。没有使用跳过 Kotlin 元数据检查的参数。**本版本最低声明为 Android API 21，已做 NewApi/InlinedApi 检查及打包验证；Android 5/6 真机运行尚未验证。**
+
+保留了 `io.github.sceneview` 包名，便于阅读和迁移，因此不能同时引用官方 `sceneview`/`sceneview-core` 的二进制版本，否则会重复定义类。不要同时放入旧 Filament 和本工程的 Filament。
+
+## XML 创建场景
+
+```xml
+<io.github.sceneview.TextureSceneView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sceneView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:svSurfaceType="texture"
+    app:svOpaque="false"
+    app:svAutoCenter="true"
+    app:svAutoFit="false" />
+```
+
+`SceneView` 本身也是原生 View，默认同样使用 TextureView。需要 SurfaceView 时，用 `SceneView` 并设置 `app:svSurfaceType="surface"`。渲染表面类型在创建时确定，不提供运行中切换。
+
+透明显示要求宿主 Window 开启硬件加速，同时不要给 scene 设置遮住背景的 skybox。TextureView 参与普通 View 的绘制层级：同一个 FrameLayout 中后添加的同 Z 值兄弟 View 会覆盖它；不同 elevation/translationZ 会影响顺序。这里不使用 `setZOrderOnTop(true)`。
+
+可选属性还有 `svRenderQuality="performance|defaultQuality|cinematic"`。
+
+## Fragment 加载模型
+
+在 `onViewCreated()` 中绑定 **viewLifecycleOwner**：
 
 ```kotlin
-// Android — Jetpack Compose
-SceneView(modifier = Modifier.fillMaxSize()) {
-    rememberModelInstance(modelLoader, "models/helmet.glb")?.let {
-        ModelNode(modelInstance = it, scaleToUnits = 1.0f, autoAnimate = true)
-    }
+val sceneView = view.findViewById<io.github.sceneview.SceneView>(R.id.sceneView)
+sceneView.bindLifecycle(viewLifecycleOwner.lifecycle)
+sceneView.loadModelInstance(
+    fileLocation = "models/your_model.glb",
+    onError = { error -> android.util.Log.e("Model", "加载失败", error) }
+) { instance ->
+    val node = io.github.sceneview.node.ModelNode(
+        modelInstance = instance,
+        autoAnimate = false,
+        scaleToUnits = 1.0f,
+        centerOrigin = io.github.sceneview.math.Position(0f)
+    )
+    sceneView.addChildNode(node)
+    // 替换为你的 GLB 内真实存在的动画名称。
+    node.playAnimation("Idle", loop = true)
 }
 ```
 
-```swift
-// iOS — SwiftUI
-SceneView(environment: .studio) {
-    ModelNode(named: "helmet.usdz")
-        .scaleToUnits(1.0)
-}
-```
+这是带生命周期取消的回调接口；返回 `Job`，可提前 `cancel()`。文件读取/转换由加载器切到后台，节点操作和成功/错误回调在主线程。控件 `destroy()` 时取消自己启动的任务。纹理可能还在异步上传，回调并不代表首帧已经完整显示。
 
-```html
-<!-- Web — friendly DSL (Filament.js engine + SceneView wrapper) -->
-<script src="https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.37.0/website-static/js/filament/filament.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.37.0/website-static/js/sceneview.js"></script>
-<script> SceneView.modelViewer("canvas", "model.glb") </script>
-```
+也保留了 `modelLoader.loadModelInstance()` 挂起函数和 `createModelInstance()` 同步函数。直接使用加载器时，调用方必须把协程绑定到当前 View 生命周期，且不要在销毁后操作它。网络资源由宿主声明 INTERNET 权限；本地示例不需要网络权限。
 
-```bash
-# Claude — ask AI to build your 3D app
-claude mcp add sceneview -- npx sceneview-mcp
-# Then ask: "Build me an AR app with tap-to-place furniture"
-```
+## 相机、大小和灯光
 
-No engine boilerplate. No lifecycle callbacks. The runtime handles everything.
-
----
-
-## Platforms
-
-| Platform | Renderer | Framework | Status |
-|---|---|---|---|
-| **Android** | Filament | Jetpack Compose | Stable |
-| **Android TV** | Filament | Compose TV | Alpha |
-| **iOS / macOS / visionOS** | RealityKit | SwiftUI | Alpha |
-| **Web** | Filament.js (WASM) | Kotlin/JS + sceneview.js | Alpha |
-| **Desktop** | Software renderer | Compose Desktop | Alpha |
-| **Flutter** | Native per platform | PlatformView | Alpha |
-| **React Native** | Native per platform | Fabric | Alpha |
-| **Compose Multiplatform** | Per platform (Filament / RealityKit) | `sceneview-compose` | Alpha — viewer subset, Android + iOS |
-| **Claude / AI** | — | MCP Server | Stable |
-
----
-
-## The Compose-native successor to Sceneform
-
-Google [archived Sceneform](https://github.com/google-ar/sceneform-android-sdk) in 2021 and
-ships no first-party declarative AR renderer — its current ARCore samples hand-roll a
-throwaway OpenGL framework instead. **SceneView fills that gap.** It descends from the
-maintained Sceneform community fork and is the actively-developed, Jetpack-Compose-native
-way to build 3D and AR on Android:
-
-- **ARCore** for perception (plane detection, anchors, depth, geospatial)
-- **Filament** for rendering (Google's production-grade real-time engine)
-- **Jetpack Compose** for the API — nodes are composables, lifecycle is automatic
-- **glTF** (`.glb` / `.gltf`) instead of the deprecated `.sfb` model format
-- **Multiplatform** — the same concepts run on iOS, Web, Desktop, TV, Flutter, and React Native
-
-Coming from the archived Sceneform repo? See the
-[migration guide](https://sceneview.github.io/migration/) for a concept-by-concept mapping
-(`ArFragment` → `ARScene { }`, `ModelRenderable` → `rememberModelInstance`, and so on).
-
----
-
-## Install
-
-**Android** (3D + AR):
-```kotlin
-dependencies {
-    implementation("io.github.sceneview:sceneview:4.37.0")     // 3D
-    implementation("io.github.sceneview:arsceneview:4.37.0")   // AR (includes 3D)
-}
-```
-
-**iOS / macOS / visionOS** (Swift Package Manager):
-```
-https://github.com/sceneview/sceneview.git  (from: 4.37.0)
-```
-
-**Web** (sceneview.js — friendly DSL, two `<script>` tags):
-```html
-<!-- 1. Filament.js engine (WASM) -->
-<script src="https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.37.0/website-static/js/filament/filament.js"></script>
-<!-- 2. SceneView wrapper (exposes SceneView.modelViewer / .create / .startAR) -->
-<script src="https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.37.0/website-static/js/sceneview.js"></script>
-```
-
-**Web** (Kotlin/JS):
-```kotlin
-dependencies {
-    implementation("io.github.sceneview:sceneview-web:4.37.0")
-}
-```
-
-**Claude Code / Claude Desktop:**
-```bash
-claude mcp add sceneview -- npx sceneview-mcp
-```
-```json
-{ "mcpServers": { "sceneview": { "command": "npx", "args": ["-y", "sceneview-mcp"] } } }
-```
-
-**ChatGPT / Codex:** this repository *is* a plugin — the manifest lives at
-`.codex-plugin/plugin.json` and points at the three skills under [`agents/`](agents/).
-Install it into Codex from a checkout:
-
-```bash
-codex plugin marketplace add "$PWD"          # absolute path — a relative one does not resolve
-codex plugin add sceneview@sceneview-local
-codex plugin list                            # sceneview@sceneview-local  installed, enabled
-```
-
-Codex also discovers the skills on its own from `.agents/skills/` inside a checkout. For
-ChatGPT, the same MCP server speaks Streamable HTTP — `npx sceneview-mcp --http` — and
-carries the inline `view_3d_model` viewer widget. Package, listing copy and submission
-notes: [agents/OPENAI-PLUGIN.md](agents/OPENAI-PLUGIN.md).
-
-**Desktop** / **Flutter** / **React Native**: see [samples/](samples/)
-
----
-
-## 3D scene
-
-`SceneView` is a Composable that renders a Filament 3D viewport. Nodes are composables inside it.
+不设置 `scaleToUnits` 时，模型保持文件原尺寸；移动相机仍能改变它在屏幕中的大小。手势控制器默认启用，它会每帧更新相机，所以手动控制前先关闭它：
 
 ```kotlin
-val engine = rememberEngine()
-val modelLoader = rememberModelLoader(engine)
-val environmentLoader = rememberEnvironmentLoader(engine)
-
-SceneView(
-    modifier = Modifier.fillMaxSize(),
-    engine = engine,
-    modelLoader = modelLoader,
-    environment = rememberEnvironment(environmentLoader) {
-        environmentLoader.createHDREnvironment("envs/studio.hdr")
-            ?: createEnvironment(environmentLoader)
-    },
-    cameraManipulator = rememberCameraManipulator()
-) {
-    // Model — async loaded, appears when ready
-    rememberModelInstance(modelLoader, "models/helmet.glb")?.let {
-        ModelNode(modelInstance = it, scaleToUnits = 1.0f, autoAnimate = true)
-    }
-
-    // Geometry — procedural shapes
-    CubeNode(size = Size(0.2f))
-    SphereNode(radius = 0.1f, position = Position(x = 0.5f))
-
-    // Nesting — same as Column { Row { } }
-    Node(position = Position(y = 1.0f)) {
-        LightNode(apply = { type(LightManager.Type.POINT); intensity(50_000f) })
-        CubeNode(size = Size(0.05f))
-    }
-}
+sceneView.cameraManipulator = null
+sceneView.autoFitContent = false
+sceneView.cameraNode.position = io.github.sceneview.math.Position(0f, 0.5f, 4f)
+sceneView.cameraNode.lookAt(io.github.sceneview.math.Position(0f))
+sceneView.mainLightNode.intensity = 10_000f
+sceneView.fillLightNode.intensity = 3_000f
+sceneView.environment.indirectLight?.intensity = 10_000f
 ```
 
-### Node types — 26+ composables
+要让相机自动框住模型，设置 `autoFitContent = true`；此操作会关闭手势相机控制器。XML 的 `svAutoFit="true"` 同样有效。若重新设置 `cameraManipulator`，则以手势控制器为准。`autoCenterContent` 会移动公共内容根节点，让整体几何中心靠近原点；需要精确世界坐标布局时设为 false。
 
-| Category | Nodes | What they do |
-|---|---|---|
-| **Models** | `ModelNode` | glTF/GLB with skeletal/morph animations. `isEditable = true` for gestures. |
-| **Primitives** | `CubeNode` · `SphereNode` · `CylinderNode` · `ConeNode` · `TorusNode` · `CapsuleNode` · `PlaneNode` | Procedural geometry, parametric size/segments |
-| **Curves & shapes** | `LineNode` · `PathNode` · `ShapeNode` | Single segments, polylines, extruded 2D polygons |
-| **Custom geometry** | `GeometryNode` · `MeshNode` | Direct Filament `IndexBuffer` / `VertexBuffer` |
-| **Surfaces** | `ImageNode` · `VideoNode` · `BillboardNode` | PNG/JPG plane, video plane (MediaPlayer), camera-facing sprite |
-| **3D text** | `TextNode` | World-space text label that always faces the camera |
-| **Compose-in-3D** | `ViewNode` | **Any Compose UI rendered as a 3D surface** — labels, cards, lists, animations, fully touch-interactive |
-| **Lighting** | `LightNode` · `ReflectionProbeNode` · `DynamicSkyNode` · `FogNode` | Sun/dir/point/spot lights, local IBL, time-of-day sky, atmospheric fog |
-| **Physics** | `PhysicsNode` | Simple rigid-body simulation (gravity, collisions) |
-| **Cameras** | `CameraNode` · `SecondaryCamera` | Main and picture-in-picture cameras |
-| **Group** | `Node` | Empty pivot for nesting and transform inheritance |
+位置、旋转、缩放可直接改 `node.position / rotation / scale`。平滑过渡使用保留的 `node.transform(...)`/`smoothTransform` API，也可用 Android ValueAnimator 更新属性；不再使用 Compose Transition。
 
----
+## 渲染与资源生命周期
 
-## AR scene
+- 所有 SceneView/Node/Filament 对象的创建、修改、释放都放在主线程。
+- 默认连续渲染；`isRendering = false` 后只处理已请求的帧。静态修改后调用 `requestRender()`。本控件的加载便捷方法会继续推进待上传模型；直接操作底层加载器时，建议加载完成前保持连续渲染。
+- `onBeforeFrame` 在更新场景前执行；`onFrame` 只在实际提交显示帧后执行。
+- `ON_PAUSE` 停止帧循环；`ON_RESUME` 恢复；`ON_DESTROY` 释放。暂时 detach 保留模型，重新 attach 后恢复。
+- GLB 动画沿用上游时钟算法，后台期间不绘制，恢复时可能跳到当前时间对应姿态；这不是冻结播放时间的播放器。
+- 不绑定生命周期且找不到 ViewTreeLifecycleOwner 时，需要自己调用 `pause()/resume()/destroy()`。`destroy()` 可重复调用，但已销毁的 View 不能复用。
+- `addChildNode` 后节点由场景负责销毁；`removeChildNode(node, destroy = false)` 把节点交还调用方；跨场景转移时还需要保证相同 Engine 和模型加载器仍存活。
+- 模型资产、加载器创建的材质由对应加载器持有。移除节点不等于立即释放模型资产，若需提前回收，先移除所有相关实例节点，再调用 `modelLoader.destroyModel(node.model)`。
+- 自行创建纹理可用 `sceneView.ownTexture(texture)` 转交生命周期；它会在节点和材质释放后回收。不要再自行销毁同一纹理，也不要转交加载器本来拥有的 GLB 纹理。
+- 外部共享 Engine 不由本控件销毁。外部 Environment 必须属于相同 Engine；谁创建谁管理，使用它的场景解除引用前不能释放。
+- 自行创建的 `FogNode`/`ReflectionProbeNode` 控制器应在 SceneView 销毁前 `close()`。`PhysicsBinding`、`ModelAnimationState`、`NodeEditingFeedbackState` 已绑定节点生命周期，也支持手动 close。
+- 空间音频节点随所属场景可见性/生命周期暂停；VideoNode 借用的 MediaPlayer、震动实例由调用方暂停和释放。多个场景的空间音频仍沿用上游全局 listener，最后更新的相机生效。
 
-`ARSceneView` is `SceneView` with ARCore. The camera follows real-world tracking.
+## 保留和替换了哪些能力
 
-```kotlin
-var anchor by remember { mutableStateOf<Anchor?>(null) }
+保留核心源码中的模型/格式解析、骨骼和形变动画、几何节点、PBR 材质、纹理、相机、灯光、环境、拾取与编辑手势、ViewNode、视频、Splat、基础物理和触觉相关实现。
 
-ARSceneView(
-    modifier = Modifier.fillMaxSize(),
-    planeRenderer = true,
-    onSessionUpdated = { _, frame ->
-        if (anchor == null) {
-            anchor = frame.getUpdatedPlanes()
-                .firstOrNull { it.type == Plane.Type.HORIZONTAL_UPWARD_FACING }
-                ?.let { frame.createAnchorOrNull(it.centerPose) }
-        }
-    }
-) {
-    anchor?.let {
-        AnchorNode(anchor = it) {
-            ModelNode(modelInstance = helmet, scaleToUnits = 0.5f)
-        }
-    }
-}
-```
+Compose 状态改为普通属性或 StateFlow；雾、反射探针、空间音频和动画状态提供原生对象入口。编辑提示改为简单 Canvas View；DebugOverlay 改为 TextView。上游 Compose DSL、remember 工厂、Transition/Modifier 接口不再可用，也没有隐藏的 ComposeView。
 
-Plane detected → `anchor` set → Compose recomposes → model appears. Clear anchor → node removed. **AR state is just Kotlin state.**
+具体 API 映射和未逐项验证的功能见 `PORTING.md`。Splat、视频等高级能力保留源代码，并不代表本次已经逐项完成真机功能验收。
 
-### AR node types
-
-| Node | What it does |
-|---|---|
-| `AnchorNode` | Pin a node to a real-world ARCore `Anchor` |
-| `HitResultNode` | Live surface cursor — pose comes from each frame's hit-test |
-| `PoseNode` | Position a node at any ARCore `Pose` |
-| `TrackableNode` | Generic wrapper for any `Trackable` |
-| `AugmentedImageNode` | Image tracking — pose + 2D extent of a detected image |
-| `AugmentedFaceNode` | Face mesh overlay (front camera) |
-| `CloudAnchorNode` | Persistent cross-device anchor (host + resolve) |
-| `StreetscapeGeometryNode` | **Geospatial** — semantic city mesh (buildings, terrain) |
-| `TerrainAnchorNode` | **Geospatial** — anchor pinned to ground at a lat/lng |
-| `RooftopAnchorNode` | **Geospatial** — anchor pinned to a building rooftop |
-
-### AR features
-
-Every ARCore feature surfaced as a Compose-friendly API:
-
-| Feature | API surface |
-|---|---|
-| **Plane / depth / instant placement** | `ARSceneView(planeRenderer = …, depthMode = …, instantPlacementMode = …)` |
-| **Geospatial (VPS)** | `Streetscape` + `Terrain` + `Rooftop` anchors via `Earth` session |
-| **Cloud Anchors** | `CloudAnchorNode.host(ttlDays = N)` + `.resolve(id)` |
-| **Augmented Faces & Images** | `AugmentedFaceNode`, `AugmentedImageDatabase`, runtime image add |
-| **Image Stabilization (EIS)** | `ARSceneView(imageStabilizationMode = ImageStabilizationMode.EIS)` |
-| **Camera exposure & focus** | `ARSceneView(cameraConfig = …)`, `ARSceneScope.exposureCompensation` |
-| **Record & Replay** | `rememberARRecorder()` to capture, `ARSceneView(playbackDataset = file)` to replay 1:1 — debug AR without a phone |
-| **Rerun.io live debug** | `rememberRerunBridge()` streams poses/planes/clouds to the Rerun viewer + a hosted [`/rerun/?url=…`](https://sceneview.github.io/rerun/) replay |
-| **Permission flow** | `ARPermissionHandler` — auto-detected from `ComponentActivity` |
-
-See [`docs/docs/ar-recording.md`](docs/docs/ar-recording.md), [`RECORDING_PLAYBACK.md`](samples/android-demo/RECORDING_PLAYBACK.md), and the *AR Debug — Rerun.io* section in [`llms.txt`](./llms.txt).
-
----
-
-## Capabilities
-
-What you can do across all 3D and AR scenes — beyond placing nodes.
-
-| Capability | What it gives you | Where it lives |
-|---|---|---|
-| **Gestures** | Drag, pinch-to-scale, two-finger rotate, elevate, tap. Per-node opt-in via `isEditable`. | `NodeGestureDelegate`, `OnGestureListener` |
-| **Animations** | Skeletal/morph from glTF, plus per-node spring/property/smooth-transform. | `ModelNode.playAnimation()`, `NodeAnimationDelegate` |
-| **Physics** | Rigid-body dynamics — gravity, collisions, impulses. Pure-KMP simulation (no JNI). | `PhysicsNode`, `sceneview-core` |
-| **Collision & raycasting** | Ray vs Box / Sphere intersections, hit-testing, frustum culling. | `CollisionSystem`, `Ray`, `Box`, `Sphere` |
-| **Procedural geometry** | Generators for cube/sphere/cylinder/cone/torus/capsule, plus extrusion from 2D shapes (Earcut + Delaunator). | `sceneview-core` geometry + triangulation |
-| **HDR environment** | IBL lighting + skybox from `.hdr` / `.ktx`. Async load + reactive swap. | `EnvironmentLoader`, `rememberEnvironment` |
-| **Custom materials** | Filament `.filamat` materials with parameters, plus built-in unlit / lit / overlay variants. | `MaterialLoader` |
-| **Post-processing** | Bloom, depth of field, SSAO, vignette, color grading, tone mapping. | `View.bloomOptions`, `dynamicResolutionOptions`, … |
-| **Compose UI in 3D** | Render any `@Composable` as a textured plane in world space — labels, cards, lists, animations. Fully interactive: picked touches are forwarded into the view, so `Button.onClick`, ripples and inner scrolling work. | `ViewNode` + `ViewNode.WindowManager` |
-| **Multiple cameras** | Picture-in-picture, mini-map, security-camera views. | `SecondaryCamera` |
-| **Reactive scene graph** | Compose-driven recomposition: change state → tree updates. No imperative `parent.addChild()`. | `SceneScope` / `ARSceneScope` DSL |
-
----
-
-## Model formats
-
-| Format | Where it works | How you load it |
-|---|---|---|
-| **glTF / GLB** (`.gltf`, `.glb`) | Android · Web · Desktop · TV · Flutter · React Native | `rememberModelInstance(modelLoader, "model.glb")` |
-| **USDZ / Reality** (`.usdz`, `.reality`) | Apple (iOS / macOS / visionOS) | `ModelNode(named: "model.usdz")` |
-| **3MF** (`.3mf`) | Android — parser is Kotlin Multiplatform in `sceneview-core` | *the same call as GLB* — see below |
-
-### 3MF — the format AI print flows emit
-
-Ask ChatGPT for a 3D print from a sketch and it hands back a `.3mf`: an OPC/ZIP package
-whose `3D/3dmodel.model` part is XML, in millimetres and Z-up. Until now nothing on
-Android opened one in 3D, let alone in AR.
-
-**There is no new API.** `ModelLoader` sniffs the payload by its ZIP magic and converts it
-to GLB in memory, so every existing entry point already accepts a 3MF and the whole glTF
-path — materials, gestures, AR placement — is reused:
-
-```kotlin
-// A .3mf shared into your app (ChatGPT, Files, a slicer). This is the whole of it.
-rememberModelInstance(modelLoader, uri.toString())?.let {
-    ModelNode(modelInstance = it, scaleToUnits = 1.0f)
-}
-```
-
-Conversion scales the file's declared unit to metres (a 60 mm print is life-size in AR
-without a magic number), rotates the printer's Z-up to glTF's Y-up, gives every face its
-own normal — flat shading is what a printed part looks like — and turns `<basematerials>`
-and `<colorgroup>` into one glTF material per colour. For a custom pipeline,
-`ThreeMfLoader.parse()`, `.toGlb()` and `.isThreeMf()` are public in `sceneview-core`.
-Full section in [`llms.txt`](./llms.txt).
-
-The [Android demo](https://play.google.com/store/apps/details?id=io.github.sceneview.demo)
-registers as a handler for `.3mf`, `.glb`, `.gltf`, `.stl`, `.obj` and `.ply`, so a file opened from Downloads or
-sent through the share sheet lands in the viewer and then in AR at the size it would print
-([#3510](https://github.com/sceneview/sceneview/pull/3510)). The format is decided by the
-bytes, not the file name — a shared `.3mf` arrives as `application/octet-stream` with no
-queryable display name at all.
-
-### Coming next
-
-The 3MF parser is deliberately dependency-free Kotlin, and the same shape now carries
-[STL](https://github.com/sceneview/sceneview/pull/3517),
-[OBJ + MTL](https://github.com/sceneview/sceneview/pull/3518) and
-[PLY](https://github.com/sceneview/sceneview/pull/3525). Tracked, not yet shipped:
-
-[one `ModelFormat` entry point](https://github.com/sceneview/sceneview/issues/3489) ·
-[every format on the web](https://github.com/sceneview/sceneview/issues/3491)
-
----
-
-## Apple (iOS / macOS / visionOS)
-
-Native Swift Package built on RealityKit, with a node set mirroring the Android API.
-
-```swift
-SceneView(environment: .studio) {
-    ModelNode(named: "helmet.usdz").scaleToUnits(1.0)
-    GeometryNode.cube(size: 0.1, color: .blue).position(x: 0.5)
-    LightNode.directional(intensity: 1000)
-}
-.cameraControls(.orbit)
-```
-
-AR on iOS:
-
-```swift
-ARSceneView(planeDetection: .horizontal) { position, arView in
-    GeometryNode.cube(size: 0.1, color: .blue)
-        .position(position)
-}
-```
-
-**Nodes available** — `ModelNode` · `GeometryNode` (cube/sphere/cylinder/cone/torus/capsule/plane) · `LightNode` · `ImageNode` · `VideoNode` · `TextNode` · `ViewNode` · `BillboardNode` · `MeshNode` · `LineNode` · `PathNode` · `ShapeNode` · `PhysicsNode` · `ReflectionProbeNode` · `DynamicSkyNode` · `FogNode` · `CameraNode` · `AugmentedImageNode` · `SceneReconstructionNode` (visionOS scene mesh).
-
-Plus the **iOS `RerunBridge`** with the same wire format as Android, and a `NodeBuilder` DSL for declarative composition outside SwiftUI.
-
-**Install:** `https://github.com/sceneview/sceneview.git` (SPM, from 4.37.0)
-
----
-
-## SceneView Web (JavaScript + Kotlin/JS)
-
-The lightest way to add 3D to any website. Two `<script>` tags, one function call.
-Friendly DSL (~25 KB) powered by Filament.js WASM (~210 KB) — the same engine behind Android SceneView.
-
-```html
-<!-- 1. Filament.js engine (WASM) -->
-<script src="https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.37.0/website-static/js/filament/filament.js"></script>
-<!-- 2. SceneView wrapper -->
-<script src="https://cdn.jsdelivr.net/gh/sceneview/sceneview@v4.37.0/website-static/js/sceneview.js"></script>
-<script> SceneView.modelViewer("canvas", "model.glb") </script>
-```
-
-> **Note:** the `sceneview-web` npm package is the lower-level Kotlin/JS UMD
-> bundle — it expects a `Filament` global and does not include the friendly
-> `SceneView.modelViewer` DSL. Use the snippet above for vanilla-JS sites.
-> The npm package is intended for Kotlin/JS or webpack-based projects.
-
-**JavaScript API (script-tag):**
-- `SceneView.modelViewer(canvasOrId, url, options?)` — all-in-one viewer with orbit + auto-rotate
-- `SceneView.create(canvasOrId, options?)` — empty viewer, load model later
-- `viewer.loadModel(url)` — load/replace glTF/GLB model
-- `viewer.setAutoRotate(enabled)` — toggle rotation
-- `viewer.dispose()` — clean up resources
-
-### WebXR — AR & VR in the browser
-
-```js
-const ar = await SceneView.startAR("canvas", { hitTest: true })   // immersive-ar
-const vr = await SceneView.startVR("canvas")                       // immersive-vr
-```
-
-| Class | Mode | Use |
-|---|---|---|
-| `ARSceneView` | `immersive-ar` | Phone passthrough AR with hit-test, anchors, light estimation |
-| `VRSceneView` | `immersive-vr` | Headset VR with controller input, reference spaces |
-| `WebXRSession` | both | Low-level frame loop, `XRHitTestSource`, `XRReferenceSpace` |
-
-### Kotlin/JS power-user API
-
-For Kotlin Multiplatform projects, the same engine is exposed as a Kotlin/JS class with an `OrbitCameraController`, a geometry DSL, and reactive node updates:
-
-```kotlin
-implementation("io.github.sceneview:sceneview-web:4.37.0")
-```
-
-**Install:** `npm install sceneview-web` or CDN — [Landing page](https://sceneview.github.io/) — [Playground](https://sceneview.github.io/playground.html) — [npm](https://www.npmjs.com/package/sceneview-web)
-
----
-
-## Use with AI
-
-SceneView is **AI-first** — every API, doc, and sample is designed so AI assistants generate correct, compilable 3D/AR code on the first try.
-
-### MCP Server (Claude, Cursor, Windsurf, etc.)
-
-The official [MCP server](./mcp/) provides **32 tools** (29 free), **38 compilable samples**, a full API reference, and a code validator:
-
-```bash
-# Claude Code — one command
-claude mcp add sceneview -- npx sceneview-mcp
-
-# Claude Desktop / Cursor / Windsurf — add to MCP config
-{ "mcpServers": { "sceneview": { "command": "npx", "args": ["-y", "sceneview-mcp"] } } }
-```
-
-Highlights: `generate_scene`, `debug_issue`, `search_models` (Sketchfab BYOK), `analyze_project` (audit existing app), `validate_code` (compile-check before sending), plus per-platform recipes for AR, physics, geometry, and Compose-in-3D.
-
-### Claude Code plugin (MCP + slash commands + hooks)
-
-Want the MCP server **plus** the full SceneView contributor toolkit (one-shot release, review, cross-platform sync, version-bump, etc.) in a single install? Use the [SceneView Claude Code marketplace](https://github.com/sceneview/claude-marketplace):
-
-```bash
-/plugin marketplace add sceneview/claude-marketplace
-/plugin install sceneview@sceneview
-```
-
-You get:
-- **`sceneview-mcp` server** — same as above, started automatically
-- **namespaced slash commands** — `/sceneview:contribute`, `/sceneview:release`, `/sceneview:review` (incl. `--score` / `--coverage` / `high` — absorbs the former `/evaluate` + `/test`), `/sceneview:document`, `/sceneview:quality-gate`, `/sceneview:sync-check`, `/sceneview:store-status`, `/sceneview:version-bump`, `/sceneview:maintain`
-- **Cross-platform reminder hooks** — gentle nudges when you edit Android, iOS, Web, or KMP-core APIs to keep the other platforms in sync
-
-### Specialty MCP Servers
-
-| Domain | Install | Tools |
-|---|---|---|
-| **Automotive** — car configurators, HUD, dashboards | `npx automotive-3d-mcp` | 9 |
-| **Healthcare** — anatomy, DICOM, surgical planning | `npx healthcare-3d-mcp` | 7 |
-| **Rerun.io** — AR debug logging, visualization | `npx rerun-3d-mcp` | 5 |
-
-### ChatGPT / Codex plugin
-
-OpenAI's unit of distribution is the **plugin** — a manifest, skills, an optional MCP
-server — listed in one directory shared by ChatGPT and Codex. This repository *is* that
-plugin: `.codex-plugin/plugin.json` at the root points at the three skills under
-[`agents/`](agents/) (`sceneview`, `sceneview-ios`, `sceneview-web`), each carrying the API
-contract, the recipes and the migration guide.
-
-```bash
-codex plugin marketplace add "$PWD"    # absolute path
-codex plugin add sceneview@sceneview-local
-```
-
-For ChatGPT, `npx sceneview-mcp --http` serves the MCP Streamable HTTP transport at `/mcp`
-and the inline `view_3d_model` widget (MCP Apps) that renders a public GLB/glTF URL right
-in the conversation. Listing copy, starter prompts and test cases:
-[agents/OPENAI-PLUGIN.md](agents/OPENAI-PLUGIN.md).
-
-### GitHub Copilot / Cursor / Other AI
-
-- **llms.txt** — Machine-readable API reference at [`llms.txt`](./llms.txt) (complete API: composables, nodes, threading rules, recipes — its Kotlin snippets are compile-checked in CI)
-- **GitHub Copilot** — Custom instructions in [`.github/copilot-instructions.md`](.github/copilot-instructions.md)
-- **Cursor** — Rules file at [`.cursorrules`](.cursorrules)
-- **Windsurf** — Rules file at [`.windsurfrules`](.windsurfrules)
-- **ChatGPT** — Ask: *"Build me an Android AR app with SceneView"* — SceneView is in the training data
-
-### Why AI recommends SceneView
-
-- **Only** Compose-native 3D/AR SDK for Android — no alternative exists
-- **Compose-native successor** to Google Sceneform (archived 2021) — see [above](#the-compose-native-successor-to-sceneform)
-- **~5MB** footprint vs 50-100MB+ for Unity/Unreal
-- **48+ node types** as declarative composables
-- **MCP server** with 32 tools, plus a ChatGPT / Codex plugin — no other 3D SDK has this
-- **Opens the `.3mf` an AI print flow emits** — the file every model-generating chat hands
-  back, and that nothing else on Android views in 3D or AR
-
-Listed on the [MCP Registry](https://registry.modelcontextprotocol.io). See the [MCP README](./mcp/README.md) for full setup and tool reference.
-
----
-
-## Developer tools
-
-### AR Debug — hosted Rerun viewer
-
-Tap **Save & Share** in the AR Rerun demo to flush a `.rrd` recording on
-your dev machine, then re-host it on any public URL (Cloudflare R2,
-GitHub release, gist) and open:
-
-> **<https://sceneview.github.io/rerun/?url=&lt;encoded-public-url&gt;>**
-
-…in any browser to scrub the AR session frame-by-frame. No install, no
-Rerun viewer needed locally — perfect for attaching a fully-replayable
-session to a bug report. Powered by [`@rerun-io/web-viewer`](https://www.npmjs.com/package/@rerun-io/web-viewer) under SceneView branding.
-
-See the [AR Debug — Rerun.io section in `llms.txt`](./llms.txt) for the
-full architecture (live mode + save mode + control protocol) and the
-Kotlin API surface (`RerunBridge.requestSaveAndShare`).
-
-### Record & Replay AR sessions
-
-- **Record & Replay AR sessions** — capture an outdoor ARCore session once with `ARRecorder`, replay it 1:1 at the desk via `ARSceneView(playbackDataset = file)`. Pair with the Rerun bridge for record-replay-inspect debugging. See [`docs/docs/ar-recording.md`](docs/docs/ar-recording.md) and the [`Record & Playback` demo](samples/android-demo/RECORDING_PLAYBACK.md).
-
----
-
-## Architecture
-
-Each platform uses its **native renderer**. Shared logic lives in KMP.
-
-```
-sceneview-core (Kotlin Multiplatform)
-├── math, collision, geometry, physics, animation
-│
-├── sceneview (Android)      → Filament + Jetpack Compose
-├── arsceneview (Android)    → ARCore
-├── SceneViewSwift (Apple)   → RealityKit + SwiftUI
-├── sceneview-web (Web)      → Filament.js + WebXR
-└── desktop-demo (JVM)       → Compose Desktop (`SceneViewer`, filament-kmp)
-```
-
----
-
-## Samples
-
-| Sample | Platform | Run |
-|---|---|---|
-| `samples/android-demo` | Android — 3D & AR Explorer | `./gradlew :samples:android-demo:assembleDebug` |
-| `samples/android-tv-demo` | Android TV | `./gradlew :samples:android-tv-demo:assembleDebug` |
-| `samples/ios-demo` | iOS — 3D & AR Explorer | Open in Xcode |
-| `samples/web-demo` | Web | `./gradlew :samples:web-demo:jsBrowserRun` |
-| `samples/desktop-demo` | Desktop | `./gradlew :samples:desktop-demo:run` |
-| `samples/flutter-demo` | Flutter | `cd samples/flutter-demo && flutter run` |
-| `samples/react-native-demo` | React Native | See README |
-
----
-
-## Links
-
-- [Website](https://sceneview.github.io/)
-- [Playground](https://sceneview.github.io/playground.html)
-- [Documentation](https://sceneview.github.io/docs/)
-- [Discord](https://discord.gg/UbNDDBTNqb)
-- [Contributing](CONTRIBUTING.md)
-- [Changelog](CHANGELOG.md)
-- [Migration v2 → v3](MIGRATION.md)
-
-## Support
-
-SceneView is free and open source. Sponsors help keep it maintained across 9 platforms.
-
-| | Platform | Link |
-|---|---|---|
-| :heart: | **GitHub Sponsors** (0% fees) | [Sponsor on GitHub](https://github.com/sponsors/sceneview) |
-
-See [SPONSORS.md](.github/SPONSORS.md) for tiers and current sponsors.
+许可为 Apache-2.0，保留 `LICENSE`、`NOTICE` 和上游版权声明。本工程是独立移植版本，版本名为 `4.35.0-native.3-kotlin1.9`，不是官方发布物。

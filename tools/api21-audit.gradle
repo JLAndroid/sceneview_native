@@ -1,0 +1,10 @@
+// Optional API compatibility audit; does not change the normal lint configuration.
+gradle.beforeProject { project ->
+    project.plugins.withId('com.android.library') {
+        project.android.lint {
+            checkOnly 'NewApi', 'InlinedApi'
+            abortOnError true
+            warningsAsErrors true
+        }
+    }
+}

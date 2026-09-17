@@ -35,3 +35,7 @@ vendored here.
 works under their own licenses and are NOT covered by the Apache License above.
 They are credited individually in assets/CREDITS.md, which is generated from
 assets/catalog.json.
+
+Native Android View/XML port, 2026-09-16. Modified source files are marked and
+listed in PORT-MANIFEST.json. The sample cube/PNG are original procedural assets.
+This port is not an official SceneView release.

@@ -1,0 +1,16 @@
+<resources>
+    <declare-styleable name="SceneView">
+        <attr name="svSurfaceType" format="enum">
+            <enum name="surface" value="0" />
+            <enum name="texture" value="1" />
+        </attr>
+        <attr name="svOpaque" format="boolean" />
+        <attr name="svAutoCenter" format="boolean" />
+        <attr name="svAutoFit" format="boolean" />
+        <attr name="svRenderQuality" format="enum">
+            <enum name="cinematic" value="0" />
+            <enum name="defaultQuality" value="1" />
+            <enum name="performance" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>
