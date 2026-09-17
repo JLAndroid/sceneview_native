@@ -1,6 +1,6 @@
 # 验证记录：Kotlin 1.9 兼容版
 
-版本 `4.35.0-native.3-kotlin1.9`，日期 2026-09-17。所有操作在独立工程完成，未修改或构建原业务项目。
+下述为历史版本 `4.35.0-native.3-kotlin1.9` 的记录；当前 `4.35.0` 的 JitPack 构建状态见 [PUBLISHING.md](PUBLISHING.md)。历史构建日期 2026-09-17。所有操作在独立工程完成，未修改或构建原业务项目。
 
 本次重新打包包含 Consumer 重载移除及 API 21 适配。两个库和消费工程均声明 minSdk 21，没有通过 overrideLibrary 绕过 SDK 合并检查。
 

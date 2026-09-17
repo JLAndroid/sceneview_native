@@ -6,6 +6,7 @@ from pathlib import Path
 import argparse
 import hashlib
 import json
+from publication_config import VERSION
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE = ROOT/'upstream/4.35.0'
@@ -42,7 +43,7 @@ def record(stamp=False):
             'sha256': sha(target) if target.exists() else None,
             'upstream_sha256': sha(original) if original else None,
         })
-    manifest = {'upstream_version':'4.35.0', 'port_version':'4.35.0-native.3-kotlin1.9',
+    manifest = {'upstream_version':'4.35.0', 'port_version':VERSION,
                 'date':'2026-09-17', 'scope':'Android 3D + Android/core sources; not a full multi-platform repository clone',
                 'counts':{s:sum(f['status']==s for f in files) for s in ('unchanged','modified','new','omitted_frontend')},
                 'files':files}

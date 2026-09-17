@@ -1,0 +1,3 @@
+# JitPack executes the wrapper in Linux; preserve a valid LF shebang.
+gradlew text eol=lf
+jitpack.yml text eol=lf

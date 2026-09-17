@@ -1,6 +1,6 @@
 {
   "upstream_version": "4.35.0",
-  "port_version": "4.35.0-native.3-kotlin1.9",
+  "port_version": "4.35.0",
   "date": "2026-09-17",
   "scope": "Android 3D + Android/core sources; not a full multi-platform repository clone",
   "counts": {

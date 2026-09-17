@@ -1,4 +1,4 @@
-"""Validate and stage existing delivery artifacts for the public HTTPS Maven repository.
+"""Legacy validator for the previous GitHub Raw Maven release (not used by JitPack).
 
 This does not execute Gradle or compile code. Run after producing a verified delivery.
 Use --check to validate the checked-in Maven files without writing anything.
@@ -24,8 +24,8 @@ def require(condition, message):
 def prepare(check_only=False):
     report = json.loads((ROOT/'dist/BUILD-REPORT.json').read_text('utf-8'))
     version = report['version']
-    require(version == json.loads((ROOT/'PORT-MANIFEST.json').read_text('utf-8'))['port_version'],
-            'Delivery version does not match source manifest')
+    require(version == '4.35.0-native.3-kotlin1.9',
+            'This script is only for the archived GitHub Raw release; use JitPack for new releases')
     artifacts = {a['module']: a for a in report['artifacts']}
     staged = {}
     for module in MODULES:

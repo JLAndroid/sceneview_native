@@ -55,7 +55,7 @@ ON_PAUSE、View 不可见或 detach 时暂停本场景的 SpatialAudioNode。其
 
 ## Kotlin 1.9 兼容适配（2026-09-17）
 
-当前版本为 `4.35.0-native.3-kotlin1.9`。工具链改为 Kotlin 编译插件 1.9.0、AGP 8.2.2、Gradle 8.2、JDK/字节码 17、compileSdk 34。移除了只适用于 AGP 9 的 builtInKotlin/newDsl 开关。Wrapper 发行版 URL 与 SHA-256 已更新，本轮使用本机缓存的官方 Gradle 8.2 运行。
+此次历史构建版本为 `4.35.0-native.3-kotlin1.9`；当前发布版本统一为 `4.35.0`，Maven 坐标与发布方式见 README。工具链改为 Kotlin 编译插件 1.9.0、AGP 8.2.2、Gradle 8.2、JDK/字节码 17、compileSdk 34。移除了只适用于 AGP 9 的 builtInKotlin/newDsl 开关。Wrapper 发行版 URL 与 SHA-256 已更新，本轮使用本机缓存的官方 Gradle 8.2 运行。
 
 数学库从 1.8.0 调整为 1.5.3，恢复了 Float2/Float3/Float4/Mat4 的容差比较扩展，保持平滑动画收敛语义。新增 3 个回归测试检查边界、NaN、矩阵全部分量与动画最终到达目标。SplatBuffers 的一处 KDoc 区间写法调整为 Kotlin 1.9 解析器可接受的文本。
 

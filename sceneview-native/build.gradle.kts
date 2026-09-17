@@ -10,7 +10,7 @@ android {
     defaultConfig {
         minSdk = 21
         consumerProguardFiles("consumer-rules.pro")
-        buildConfigField("String", "VERSION_NAME", "\"4.35.0-native.3-kotlin1.9\"")
+        buildConfigField("String", "VERSION_NAME", "\"${project.version}\"")
     }
     buildFeatures { buildConfig = true }
     publishing { singleVariant("release") { withSourcesJar() } }

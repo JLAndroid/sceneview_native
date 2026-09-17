@@ -6,7 +6,7 @@ dependencyResolutionManagement {
     repositories {
         maven {
             url = uri("dist/repository")
-            content { includeGroup("local.sceneview") }
+            content { includeGroup(providers.gradleProperty("GROUP").get()) }
         }
         google()
         mavenCentral()

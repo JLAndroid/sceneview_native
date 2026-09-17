@@ -4,9 +4,12 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.9.0" apply false
 }
 
+group = providers.gradleProperty("GROUP").get()
+version = providers.gradleProperty("VERSION_NAME").get()
+
 subprojects {
-    group = "local.sceneview"
-    version = "4.35.0-native.3-kotlin1.9"
+    group = providers.gradleProperty("GROUP").get()
+    version = providers.gradleProperty("VERSION_NAME").get()
     configurations.configureEach {
         resolutionStrategy.eachDependency {
             val group = requested.group

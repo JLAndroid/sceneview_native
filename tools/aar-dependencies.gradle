@@ -1,7 +1,7 @@
 // Alternative to the supplied Maven repository. Merge into app/build.gradle (Groovy).
 dependencies {
-    implementation files('libs/sceneview-native-4.35.0-native.3-kotlin1.9.aar')
-    implementation files('libs/sceneview-core-4.35.0-native.3-kotlin1.9.aar')
+    implementation files('libs/sceneview-native-4.35.0.aar')
+    implementation files('libs/sceneview-core-4.35.0.aar')
 // Filament utilities require this runtime; the Kotlin compiler plugin remains 1.9.0.
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.0.21'
     implementation 'dev.romainguy:kotlin-math:1.5.3'

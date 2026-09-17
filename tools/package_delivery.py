@@ -7,10 +7,10 @@ import json
 import shutil
 import struct
 import xml.etree.ElementTree as ET
+from publication_config import GROUP, GROUP_PATH, VERSION
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT/'dist'
-VERSION = '4.35.0-native.3-kotlin1.9'
 
 
 def sha(path):
@@ -29,13 +29,13 @@ def main():
     assert dependencies['resolved'] and dependencies['noComposeArtifacts']
     modules = dependencies['modules']
     for name in ('sceneview-core', 'sceneview-native'):
-        assert any(m['group']=='local.sceneview' and m['name']==name and
+        assert any(m['group']==GROUP and m['name']==name and
                    m['version']==VERSION and m['type']=='module' for m in modules), name
     assert not any(m['group'].startswith(('androidx.compose','org.jetbrains.compose')) for m in modules)
 
     raw_dependencies = json.loads((DIST/'raw-aar-dependencies.json').read_text())
     assert raw_dependencies['resolved'] and raw_dependencies['noComposeArtifacts']
-    assert not any(m['group']=='local.sceneview' for m in raw_dependencies['modules']), 'Raw AAR test must not resolve project/Maven substitutes'
+    assert not any(m['group']==GROUP for m in raw_dependencies['modules']), 'Raw AAR test must not resolve project/Maven substitutes'
     for graph in (dependencies, raw_dependencies):
         for group, name, version in (
             ('org.jetbrains.kotlin', 'kotlin-stdlib', '2.0.21'),
@@ -58,7 +58,7 @@ def main():
     inspected = []
     for name in ('sceneview-core', 'sceneview-native'):
         source = ROOT/name/'build/outputs/aar'/f'{name}-release.aar'
-        publication = DIST/'repository/local/sceneview'/name/VERSION
+        publication = DIST/'repository'/GROUP_PATH/name/VERSION
         published = publication/f'{name}-{VERSION}.aar'
         assert source.read_bytes() == published.read_bytes(), 'Published AAR differs from build output'
         target = DIST/'aar'/f'{name}-{VERSION}.aar'
@@ -96,7 +96,7 @@ def main():
                               'no_compose_bytecode_references':True,'no_consumer_bytecode_references':True})
         ET.parse(publication/f'{name}-{VERSION}.pom')
         metadata = json.loads((publication/f'{name}-{VERSION}.module').read_text())
-        assert metadata['component']['group'] == 'local.sceneview'
+        assert metadata['component']['group'] == GROUP
         assert metadata['component']['module'] == name
         assert metadata['component']['version'] == VERSION
         if name == 'sceneview-native':

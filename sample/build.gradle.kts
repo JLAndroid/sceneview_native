@@ -24,7 +24,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 }
 dependencies {
     if (providers.gradleProperty("usePackagedAar").orNull == "true") {
-        implementation("local.sceneview:sceneview-native:4.35.0-native.3-kotlin1.9")
+        implementation("${project.group}:sceneview-native:${project.version}")
     } else {
         implementation(project(":sceneview-native"))
     }

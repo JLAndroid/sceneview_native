@@ -6,9 +6,9 @@
 
 此前的本地交付记录显示：**已构建两个 release AAR，并用实际发布的 AAR 成功打包示例 APK；尚未做真机验收。** 当时实际依赖解析通过，示例依赖图没有 Compose 组件。该记录不代表此后每次源码修改都已经重新构建。本次仓库整理仅做离线结构检查，没有执行 Gradle。接入先看 [DELIVERY.md](DELIVERY.md)，历史验证范围见 [VALIDATION.md](VALIDATION.md)。
 
-## 通过网络 Maven 接入
+## 通过 JitPack Maven 接入
 
-本仓库的 `maven/` 目录提供公开 HTTPS Maven 仓库，由 GitHub Raw 托管。无需克隆源码、下载本地 AAR 或配置 GitHub 令牌。
+版本统一为 **`4.35.0`**。此版本需要 JitPack 成功构建后才能下载；当前发布准备与验证状态见 [PUBLISHING.md](PUBLISHING.md)。
 
 在使用方的 `settings.gradle.kts` 中配置：
 
@@ -17,10 +17,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven {
-            url = uri("https://raw.githubusercontent.com/JLAndroid/sceneview_native/main/maven")
-            content { includeGroup("local.sceneview") }
-        }
+        maven { url = uri("https://jitpack.io") }
     }
 }
 ```
@@ -29,34 +26,33 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    implementation("local.sceneview:sceneview-native:4.35.0-native.3-kotlin1.9")
+    implementation("com.github.JLAndroid.sceneview_native:sceneview-native:4.35.0")
 }
 ```
 
 Groovy 项目在 `settings.gradle` 的 `dependencyResolutionManagement.repositories` 中添加：
 
 ```groovy
-maven {
-    url 'https://raw.githubusercontent.com/JLAndroid/sceneview_native/main/maven'
-    content { includeGroup 'local.sceneview' }
-}
+maven { url 'https://jitpack.io' }
 ```
 
 然后在模块 `build.gradle` 中添加：
 
 ```groovy
-implementation 'local.sceneview:sceneview-native:4.35.0-native.3-kotlin1.9'
+implementation 'com.github.JLAndroid.sceneview_native:sceneview-native:4.35.0'
 ```
 
-`sceneview-core`、Filament 等依赖会自动传递。`local.sceneview` 是沿用的 Maven groupId，不代表只能本地使用。请移除之前手动放入 `app/libs` 的两个 SceneView Native AAR，并且不要同时依赖官方 SceneView，否则会重复定义类。仓库地址需要能访问 `raw.githubusercontent.com`。
+这是多模块仓库，因此 groupId 为 `com.github.JLAndroid.sceneview_native`，artifactId 为 `sceneview-native`。`sceneview-core` 和第三方依赖会自动传递。
 
-当前网络版本复用此前通过接入验证的 AAR；发布时核对了源码包、资源、依赖描述和哈希，没有重新执行 Gradle 或真机测试。最低 Android API 21、Java 17，具体兼容范围见下方工具链说明。后续变更需构建并发布新的版本号。
+JitPack 是独立于 Maven Central 的 Maven 仓库，所以需要添加一次 `https://jitpack.io`。不再使用 GitHub Raw 地址或 `local.sceneview` 坐标，也不需要 Central 注册、签名或 Token。请移除之前手动放入 `app/libs` 的两个 SceneView Native AAR，以及旧的 SceneView Native 依赖；不要同时依赖官方 SceneView，以免重复定义类。
+
+最低 Android API 21、Java 17，工具链和运行验证范围见下文。库包名仍为 `io.github.sceneview`，不因 Maven 坐标变化而修改。
 
 ## 仓库内容与来源
 
 保留 Apache-2.0 的 `LICENSE`、`NOTICE` 和源码版权声明。修改与上游文件的对应关系见 `PORT-MANIFEST.json`；`upstream/` 保存移植依据和哈希校验所需原件，不参与模块编译。
 
-Git 仓库提交源码、必要资源、Gradle Wrapper、配置、文档、校验工具，以及 `maven/` 中用于网络分发的正式产物。`build/`、`.gradle/`、`.kotlin/`、日志、`local.properties`、本机工具目录 `.build-tools/`、交付目录 `dist/` 以及兼容性示例中的生成 AAR 均不提交。
+Git 仓库提交源码、必要资源、Gradle Wrapper、配置、文档、校验工具，以及 `maven/` 中保留的旧版分发归档。当前版本由 JitPack 从源码构建。`build/`、`.gradle/`、`.kotlin/`、日志、`local.properties`、本机工具目录 `.build-tools/`、交付目录 `dist/` 以及兼容性示例中的生成 AAR 均不提交。
 
 使用 Android Studio 打开仓库并配置自己的 Android SDK；默认示例直接依赖本地源码模块，不需要 `dist/`。`compatibility-check/` 是独立的 AAR 接入验证工程，需要先准备两个当前版本 AAR，详见 [DELIVERY.md](DELIVERY.md)。
 
@@ -68,8 +64,10 @@ Git 仓库提交源码、必要资源、Gradle Wrapper、配置、文档、校�
 | `sceneview-core/` | 数学、碰撞、几何与模型格式解析；合并 commonMain 和 Android 实现 |
 | `sceneview-native/` | 原生 View/XML 库、渲染与资源管理、节点和加载器 |
 | `sample/` | 普通 Activity + XML 示例，不使用 Compose |
-| `maven/` | 可通过公开 HTTPS 地址使用的 Maven 产物与依赖描述 |
-| `tools/prepare_maven_repository.py` | 核对已有交付包并准备网络 Maven 文件，不运行 Gradle |
+| `jitpack.yml` | JitPack 的 JDK 与两个模块的发布任务 |
+| `PUBLISHING.md` | JitPack 发布步骤与验证状态 |
+| `maven/` | 之前 GitHub Raw 方案的旧版归档，不是当前版本的发布目录 |
+| `tools/prepare_maven_repository.py` | 旧版 GitHub Raw 产物的校验工具，不参与 JitPack 发布 |
 | `tools/verify_native.py` | 无需 Gradle 的源码/资源结构检查 |
 | `PORTING.md` | 移植范围、API 差异、资源所有权 |
 | `VALIDATION.md` | 已检查内容与待验证步骤 |
@@ -205,4 +203,4 @@ Compose 状态改为普通属性或 StateFlow；雾、反射探针、空间音�
 
 具体 API 映射和未逐项验证的功能见 `PORTING.md`。Splat、视频等高级能力保留源代码，并不代表本次已经逐项完成真机功能验收。
 
-许可为 Apache-2.0，保留 `LICENSE`、`NOTICE` 和上游版权声明。本工程是独立移植版本，版本名为 `4.35.0-native.3-kotlin1.9`，不是官方发布物。
+许可为 Apache-2.0，保留 `LICENSE`、`NOTICE` 和上游版权声明。本工程是独立移植版本，版本名为 `4.35.0`，不是官方发布物。

@@ -1,5 +1,10 @@
 # SceneView Native HTTPS Maven repository
 
+**Legacy distribution only. New releases use JitPack.** See the root README for
+`com.github.JLAndroid.sceneview_native:sceneview-native:4.35.0` and the
+`https://jitpack.io` repository. Files below keep the previous release available;
+they are not the JitPack 4.35.0 release and must not be relabeled as that release.
+
 Public repository URL:
 
 ```text
