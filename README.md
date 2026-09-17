@@ -8,7 +8,7 @@
 
 ## 通过 JitPack Maven 接入
 
-版本统一为 **`4.35.0`**。此版本需要 JitPack 成功构建后才能下载；当前发布准备与验证状态见 [PUBLISHING.md](PUBLISHING.md)。
+版本统一为 **`4.35.0`**，已在 JitPack 构建并发布成功。示例已通过网络解析两个模块并成功打包 APK；验证详情见 [PUBLISHING.md](PUBLISHING.md)。
 
 在使用方的 `settings.gradle.kts` 中配置：
 
